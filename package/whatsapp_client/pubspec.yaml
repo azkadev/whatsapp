@@ -1,0 +1,27 @@
+name: whatsapp_client
+description: A Whatsapp Client Library for interact with whatsapp api unnofficial.
+version: 1.0.5
+homepage: https://github.com/azkadev/whatsapp
+repository: https://github.com/azkadev/whatsapp
+issue_tracker: https://github.com/azkadev/whatsapp/issues 
+documentation: https://youtube.com/@azkadev
+funding:
+  - https://github.com/sponsors/azkadev
+
+executables:
+  whatsapp_client: whatsapp_client
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.16.0
+
+dependencies: 
+  general_lib: ^0.0.15
+  packagex: ^0.0.38
+  path: ^1.9.0
+  http: ^1.1.2
+  mason_logger: ^0.2.10
+  universal_io: ^2.2.2

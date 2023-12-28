@@ -1,0 +1,35 @@
+{
+  "name": "whatsapp_client",
+  "version": "0.0.35",
+  "description": "Whatsapp client library for make automation bot",
+  "main": "lib/whatsapp_client.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azkadev/whatsapp_client.git"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "userbot",
+    "wa",
+    "baileys",
+    "whatsapp-bot"
+  ],
+  "author": "azkadev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azkadev/whatsapp_client/issues"
+  },
+  "homepage": "https://github.com/azkadev/whatsapp_client#readme",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.5.0",
+    "libphonenumber-js": "^1.10.34",
+    "node-cache": "^5.1.2",
+    "pino": "^8.14.1",
+    "qrcode": "^1.5.3"
+  }
+}

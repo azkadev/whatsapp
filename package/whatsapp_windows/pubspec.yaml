@@ -1,0 +1,43 @@
+name: whatsapp_windows
+description: A Library Full Package Template
+version: 0.0.0
+homepage: https://github.com/azkadev/whatsapp
+repository: https://github.com/azkadev/whatsapp
+issue_tracker: https://github.com/azkadev/whatsapp/issues 
+documentation: https://youtube.com/@azkadev
+funding:
+  - https://github.com/sponsors/azkadev
+
+
+platforms:
+ android:
+ ios:
+ linux:
+ macos:
+ web:
+ windows:
+
+# topics:
+#   - whatsapp
+#   - whatsapp_flutter
+#   - whatsapp_dart
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+ 
