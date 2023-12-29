@@ -9,10 +9,10 @@ class WhatsAppClientBotApiOption {
   Uri? urlWaBotApi;
   bool? isInvokeThrowOnError;
   WhatsAppClientBotApiOption({
-    this.alfred,
+    required this.alfred,
     required this.tokenBot,
     this.clientOption,
-    this.whatsAppCryptoKey = "DdtLKPV31OvdT72g",
+    this.whatsAppCryptoKey = "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb",
     this.whatsAppUrlWebhook,
     this.urlWaBotApi,
     this.isInvokeThrowOnError,

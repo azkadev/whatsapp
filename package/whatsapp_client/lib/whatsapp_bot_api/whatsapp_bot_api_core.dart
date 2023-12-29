@@ -29,7 +29,7 @@ class WhatsAppBotApi {
     required String tokenBot,
     Map? clientOption,
     this.alfred,
-    String whatsAppCryptoKey = "DdtLKPV31OvdT72g",
+    String whatsAppCryptoKey = "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb",
     EventEmitter? eventEmitter,
     this.event_invoke = "invoke",
     this.event_update = "update",
@@ -71,8 +71,12 @@ class WhatsAppBotApi {
               (HttpRequest req, HttpResponse res) async {
             try {
               Map query = (req.uri.queryParameters).clone();
-              Map<String, dynamic> body =
-                  json.decode((await req.body) as String);
+              Map<String, dynamic> body = ((await req.bodyAsJsonMap));
+
+              try {
+                query["wa-client"] =
+                    req.uri.query.replaceAll(RegExp("^(wa=)"), "");
+              } catch (e) {}
 
               event_emitter.emit(
                 event_update,
@@ -99,9 +103,23 @@ class WhatsAppBotApi {
   WaClientData waClientData({
     required Map query,
   }) {
-    Map decyprt =
-        json.decode(whats_app_crypto.decrypt(data_base64: query["wa"]));
-    return WaClientData(decyprt);
+    try {
+      if (query["wa"] is String == false) {
+        query["wa"] = "";
+      }
+      Map decyprt = json.decode(whats_app_crypto.decrypt(
+          data_base64:
+              (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
+      return WaClientData(decyprt);
+    } catch (e) {
+      if (query["wa-client"] is String == false) {
+        query["wa-client"] = "";
+      }
+      Map decyprt = json.decode(whats_app_crypto.decrypt(
+          data_base64:
+              (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
+      return WaClientData(decyprt);
+    }
   }
 
   Future<Map> initIsolate({
@@ -109,8 +127,8 @@ class WhatsAppBotApi {
     String? idClient,
     bool isCreateclient = true,
     Map? user,
-    int owner_user_id = 0,
-    int from_bot_user_id = 0,
+    int owner_tg_user_id = 0,
+    int from_tg_bot_user_id = 0,
     int expire_date = 0,
     String type_bot = "glx",
     String? path,
@@ -122,13 +140,13 @@ class WhatsAppBotApi {
     idClient ??= generateUuid(10);
     Map client_data = {
       "client_token": tokenBot,
-      "owner_user_id": owner_user_id,
       "client_type": type_bot,
       "client_title": user["first_name"],
       "client_username": user["username"],
-      "from_bot_user_id": from_bot_user_id,
       "expire_date": expire_date,
       "version": version,
+      "owner_tg_user_id": owner_tg_user_id,
+      "from_tg_bot_user_id": from_tg_bot_user_id,
     };
     String? query_telegram_webhook =
         whats_app_crypto.encryptMapToBase64(data: client_data);
@@ -161,8 +179,8 @@ class WhatsAppBotApi {
     String? idClient,
     bool isCreateclient = false,
     Map? user,
-    int owner_user_id = 0,
-    int from_bot_user_id = 0,
+    int owner_tg_user_id = 0,
+    int from_tg_bot_user_id = 0,
     int expire_date = 0,
     String type_bot = "glx",
     String? path,
@@ -174,8 +192,8 @@ class WhatsAppBotApi {
       idClient: idClient,
       isCreateclient: isCreateclient,
       user: user,
-      owner_user_id: owner_user_id,
-      from_bot_user_id: from_bot_user_id,
+      owner_tg_user_id: owner_tg_user_id,
+      from_tg_bot_user_id: from_tg_bot_user_id,
       expire_date: expire_date,
       type_bot: type_bot,
       path: path,

@@ -153,7 +153,7 @@ class WhatsAppBotApiServer {
     required String host,
     required int wa_bot_api_port,
     String app_name = "Whatsapp Client",
-    String whatsapp_client_crypto_key = "DdtLKPV31OvdT72g",
+    String whatsapp_client_crypto_key = "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb",
     String? workingDirectory,
     String? database_directory,
     bool is_print = false,

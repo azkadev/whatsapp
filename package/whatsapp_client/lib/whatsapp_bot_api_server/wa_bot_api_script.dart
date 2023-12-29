@@ -36,7 +36,7 @@ List<WaBotApiScript> waBotApiScripts = [
           "galaxeus_lib": "^0.0.7",
           "glob": "^10.2.7",
           "node-fetch": "^2.6.0",
-          "whatsapp_client": "^0.0.35",
+          "whatsapp_client": "^0.0.36",
         },
       },
     ),
@@ -50,13 +50,13 @@ var { WhatsappClient, UpdateWa } = require("whatsapp_client");
 var path = require('node:path');
 var uri = require('node:url');
 var fs = require("node:fs");
-var { default: fetch } = require("node-fetch");
+// var { default: fetch } = require("node-fetch");
 var { glob } = require("glob");
 
 var { Crypto } = require("galaxeus_lib");
 
 var crypto = new Crypto({
-    key: (process.env["whatsapp_client_crypto_key"] ?? "DdtLKPV31OvdT72g"),
+    key: (process.env["whatsapp_client_crypto_key"] ?? "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb"),
 });
 
 
@@ -227,18 +227,26 @@ async function main() {
                 "encoding": "utf8"
             }));
             if (waClientData["url"]) {
-                await fetch(waClientData["url"], {
+ 
+                // encodeURI()
+                await fetch((new uri.URL(waClientData["url"])).toString(), {
                     "method": "post",
                     "headers": {
-
+                        "content-type": "application/json",
+                        // "wa-client": getUrlQueryWa({
+                        //     "url": waClientData["url"],
+                        // }),
                     },
                     "body": JSON.stringify(update),
                 });
-            } else if (updateWa.update_wa.client_option.url_webhook) {
-                await fetch(updateWa.update_wa.client_option.url_webhook, {
+            } else if (updateWa.update_wa.client_option.url_webhook) { 
+                await fetch((new uri.URL(updateWa.update_wa.client_option.url_webhook)).toString(), {
                     "method": "post",
                     "headers": {
-
+                        "content-type": "application/json",
+                        // "wa-client": getUrlQueryWa({
+                        //     "url": updateWa.update_wa.client_option.url_webhook
+                        // }),
                     },
                     "body": JSON.stringify(update),
                 });
@@ -463,6 +471,22 @@ async function handleUpdate({
 
 }
 
+function getUrlQueryWa({
+    url = "",
+    query = {
+
+    }
+}) { 
+    try {
+
+        return (new uri.URL(url)).searchParams.get("wa");
+    } catch (e) {
+
+    }
+    return "";
+}
+
+
 function updateUrlQuery({
     url = "",
     query = {
@@ -476,7 +500,6 @@ function updateUrlQuery({
     try {
 
         var wa_old = (search_params.get("wa"));
-
         wa_decrypt_json = JSON.parse(crypto.decrypt({
             "data": wa_old,
         }));
@@ -500,7 +523,6 @@ function updateUrlQuery({
     // }
     url_api.search = search_params.toString()
     return decodeURIComponent(url_api.toString());
-
 }
 
 function generateUuid() {
@@ -578,7 +600,6 @@ class Args {
 
 }
 main();
-
 """,
   ),
 ];

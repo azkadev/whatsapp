@@ -17,6 +17,7 @@ void main(List<String> args) async {
     is_print: false,
     wa_bot_api_port: 9990,
     force_install_script: false,
+    is_delete_script_after_run: false,
   );
 
   WhatsAppClient wa = WhatsAppClient();
