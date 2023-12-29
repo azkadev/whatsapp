@@ -25,16 +25,19 @@ List<WaBotApiScript> waBotApiScripts = [
         "description": "",
         "bin": "server.js",
         "main": "server.js",
-        "scripts": {"test": "echo \"Error: no test specified\" && exit 1"},
+        "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+        },
         "keywords": [],
         "author": "",
         "license": "ISC",
         "dependencies": {
           "fastify": "^4.17.0",
+          "galaxeus_lib": "^0.0.7",
           "glob": "^10.2.7",
           "node-fetch": "^2.6.0",
-          "whatsapp_client": "^0.0.35"
-        }
+          "whatsapp_client": "^0.0.35",
+        },
       },
     ),
   ),
@@ -49,6 +52,12 @@ var uri = require('node:url');
 var fs = require("node:fs");
 var { default: fetch } = require("node-fetch");
 var { glob } = require("glob");
+
+var { Crypto } = require("galaxeus_lib");
+
+var crypto = new Crypto({
+    key: (process.env["whatsapp_client_crypto_key"] ?? "DdtLKPV31OvdT72g"),
+});
 
 
 async function main() {
@@ -197,7 +206,7 @@ async function main() {
                                 var url_webhook = updateUrlQuery({
                                     url: waClientData["url"],
                                     query: {
-                                        "client_user_id": update["authorization_state"]["client"]["id"] ,
+                                        "client_user_id": update["authorization_state"]["client"]["id"],
                                     },
                                 });
                                 waClientData["url"] = url_webhook;
@@ -462,12 +471,33 @@ function updateUrlQuery({
 }) {
     var url_api = new URL(url);
     var search_params = new URLSearchParams(url_api.search);
-    for (var key in query) {
-        if (Object.hasOwnProperty.call(query, key)) {
-            var element = query[key];
-            search_params.set(key, element);
-        }
+
+    var wa_decrypt_json = {};
+    try {
+
+        var wa_old = (search_params.get("wa"));
+
+        wa_decrypt_json = JSON.parse(crypto.decrypt({
+            "data": wa_old,
+        }));
+    } catch (e) {
+
     }
+
+    var wa_encrypt = crypto.encrypt({
+        "data": JSON.stringify({
+            ...wa_decrypt_json,
+            ...query,
+        }),
+    });
+
+    search_params.set("wa", wa_encrypt);
+    // for (var key in query) {
+    //     if (Object.hasOwnProperty.call(query, key)) {
+    //         var element = query[key];
+    //         search_params.set(key, element);
+    //     }
+    // }
     url_api.search = search_params.toString()
     return decodeURIComponent(url_api.toString());
 
@@ -547,9 +577,7 @@ class Args {
     }
 
 }
-main(); 
-
-
+main();
 
 """,
   ),

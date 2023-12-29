@@ -12,3 +12,16 @@ class UpdateWaData {
     return UpdateNewMessage(rawData);
   }
 }
+class UpdateWaBot {
+  Map<String, dynamic> body;
+  Map query;
+  String type;
+  Uri uri;
+
+  UpdateWaBot({
+    required this.uri,
+    required this.body,
+    required this.query,
+    required this.type,
+  });
+}
