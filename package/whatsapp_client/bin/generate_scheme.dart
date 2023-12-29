@@ -19,8 +19,6 @@ void main(List<String> args) async {
 
   await jsonToScripts(
     datas,
-    directory: Directory(
-      join(Directory.current.path, "lib", "scheme")
-    ),
+    directory: Directory(join(Directory.current.path, "lib", "scheme")),
   );
 }

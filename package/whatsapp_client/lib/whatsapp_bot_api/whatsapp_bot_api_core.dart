@@ -67,10 +67,12 @@ class WhatsAppBotApi {
         if (is_init_server == false) {
           is_init_server = true;
 
-          alfred!.post(whatsapp_url_webhook.path, (HttpRequest req, HttpResponse res) async {
+          alfred!.post(whatsapp_url_webhook.path,
+              (HttpRequest req, HttpResponse res) async {
             try {
               Map query = (req.uri.queryParameters).clone();
-              Map<String, dynamic> body = json.decode((await req.body) as String); 
+              Map<String, dynamic> body =
+                  json.decode((await req.body) as String);
 
               event_emitter.emit(
                 event_update,
@@ -97,7 +99,8 @@ class WhatsAppBotApi {
   WaClientData waClientData({
     required Map query,
   }) {
-    Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: query["wa"]));
+    Map decyprt =
+        json.decode(whats_app_crypto.decrypt(data_base64: query["wa"]));
     return WaClientData(decyprt);
   }
 
@@ -127,7 +130,8 @@ class WhatsAppBotApi {
       "expire_date": expire_date,
       "version": version,
     };
-    String? query_telegram_webhook = whats_app_crypto.encryptMapToBase64(data: client_data);
+    String? query_telegram_webhook =
+        whats_app_crypto.encryptMapToBase64(data: client_data);
     Map result_webhook = await request(
       (isCreateclient) ? "createClient" : "setWebhook",
       parameters: {
@@ -180,7 +184,8 @@ class WhatsAppBotApi {
     );
   }
 
-  Listener on(String type_update, FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
+  Listener on(String type_update,
+      FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
     return event_emitter.on(type_update, null, (Event ev, context) async {
       try {
         if (ev.eventData is UpdateWaBot) {

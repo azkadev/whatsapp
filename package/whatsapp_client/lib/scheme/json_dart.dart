@@ -3,7 +3,6 @@ import 'dart:convert';
 
 /// return original data json
 class JsonScheme {
-  
   /// return original data json
   Map rawData;
 
@@ -139,7 +138,7 @@ class JsonScheme {
   String toString() {
     return json.encode(rawData);
   }
-} 
+}
 
 extension JsonSchemeExtensions on List<JsonScheme> {
   List<Map> toJson() {
@@ -151,4 +150,3 @@ extension JsonSchemeExtensions on List<JsonScheme> {
     return JsonEncoder.withIndent(" " * 2).convert(toJson());
   }
 }
-

@@ -12,6 +12,7 @@ class UpdateWaData {
     return UpdateNewMessage(rawData);
   }
 }
+
 class UpdateWaBot {
   Map<String, dynamic> body;
   Map query;
