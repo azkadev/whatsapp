@@ -5,6 +5,8 @@ Whatsapp client menggunakan bahasa code dart bisa berjalan menggunakan puppeteer
 
 ## Pembuat
 
+<!-- global first -->
+
 <h3 align="center">
   Pencipta Library
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
@@ -46,6 +48,17 @@ Whatsapp client menggunakan bahasa code dart bisa berjalan menggunakan puppeteer
 </p>
 
 ---
+
+## 🔗️ Links
+
+#### Docs / Tutorial / Example
+
+1. [GITHUB DOCS](/docs/)
+2. [Youtube](https://youtube.com/@azkadev)
+3. [Telegram Chat Group Support](https://t.me/DEVELOPER_GLOBAL_PUBLIC)
+
+<!-- global finished -->
+
 
 
 ## Screenshot
