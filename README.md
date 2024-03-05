@@ -49,13 +49,19 @@ Whatsapp client menggunakan bahasa code dart bisa berjalan menggunakan puppeteer
 
 ---
 
+## 📑️ Tentang Saya
+
+Saya seorang developer miskin (tidak kaya) 
+
 ## 🔗️ Links
 
 #### Docs / Tutorial / Example
 
 1. [GITHUB DOCS](/docs/)
 2. [Youtube](https://youtube.com/@azkadev)
-3. [Telegram Chat Group Support](https://t.me/DEVELOPER_GLOBAL_PUBLIC)
+3. [Telegram Chat Group Support FREE](https://t.me/DEVELOPER_GLOBAL_PUBLIC)
+3. [Telegram Bot Support Berbayar]()
+4. [Applikasi Support]()
 
 <!-- global finished -->
 
