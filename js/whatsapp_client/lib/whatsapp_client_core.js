@@ -1152,7 +1152,7 @@ class WhatsappClient {
 			});
 
 		}
-		if (RegExp("^(readMessage)$", "i").test(method)) {
+		if (RegExp("^(readMessage)$", "i").test(method)) { 
 			if (!parameters["chat_id"]) {
 				return {
 					"message": "parameters chat_id harus isi!"
@@ -1172,7 +1172,8 @@ class WhatsappClient {
 			}
 			var msg_parameters = {
 
-			};
+			}; 
+
 			return await waClient.readMessages([{
 				...msg_parameters,
 				"remoteJid": this.toIdString(parameters["chat_id"]),
@@ -1231,6 +1232,7 @@ class WhatsappClient {
 			}
 			return await waClient.groupMetadata(parameters["supergroup_id"]);
 		}
+		
 		if (RegExp("^(getChat)$", "i").test(method)) {
 			if (!parameters["chat_id"]) {
 				return {
@@ -1447,12 +1449,22 @@ class WhatsappClient {
 	} = {
 
 		}) {
-		return await this.invokeRaw({
+		var res = await this.invokeRaw({
 			method: method,
 			parameters: parameters,
 			waClient: waClient,
 
 		});
+
+
+		if (res){
+
+			return res;
+		}
+
+		return {
+			"@type": "ok"
+		};
 	}
 
 

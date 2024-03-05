@@ -5,6 +5,11 @@ import "package:path/path.dart" as path;
 
 void main(List<String> args) async {
   Directory directory = Directory.current;
+  Directory directory_home = Directory(path.join(directory.path));
+
+  File file_readme_home = File(path.join(directory_home.path, "README.md"));
+  String readme_home = await file_readme_home.readAsString();
+  // await file_readme.writeAsString(content_readme);
   Directory directory_packages = Directory(path.join(directory.path, "package"));
 
   if (!directory_packages.existsSync()) {
@@ -19,33 +24,10 @@ void main(List<String> args) async {
     if (fileSystemEntity is Directory) {
       File file_readme = File(path.join(fileSystemEntity.path, "README.md"));
 
-      await file_readme.writeAsString(content_readme);
+      await file_readme.writeAsString(readme_home);
     }
   }
 
   print("Finished");
   exit(0);
 }
-
-String content_readme = """
-# General
-
-
----
-
-### Demo
-
----
-
-### Install Library
-
-```bash
-dart pub add general
-```
-
-or flutter
-
-```bash
-dart pub add general_flutter
-```
-""";

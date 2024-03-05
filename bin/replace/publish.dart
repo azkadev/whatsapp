@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps
 
 import 'package:universal_io/io.dart';
 import "package:path/path.dart" as path;
@@ -12,7 +12,8 @@ void main(List<String> args) async {
     exit(1);
   }
 
-  List<FileSystemEntity> file_system_entity_packages = directory_packages.listSync();
+  List<String> file_system_entity_packages = directory_packages.listSync().map((e) => e.path).toList();
+  file_system_entity_packages.sort();
   String contents = """
 # /bin/sh
 
@@ -20,15 +21,16 @@ void main(List<String> args) async {
       .trim();
 
   for (var i = 0; i < file_system_entity_packages.length; i++) {
-    FileSystemEntity fileSystemEntity = file_system_entity_packages[i];
-    if (fileSystemEntity is Directory) {
+    String fileSystemEntity = file_system_entity_packages[i];
+    // if (fileSystemEntity is Directory) {
       contents += "\n";
       contents += """
-cd ${fileSystemEntity.path}
+cd ${fileSystemEntity}
 dart pub publish -f
-""".trim();
+"""
+          .trim();
       contents += "\n";
-    }
+    // }
   }
 
   File file = File(path.join(directory.path, "publish.sh"));
