@@ -30,7 +30,7 @@ import 'package:whatsapp_client/whatsapp_client.dart';
 ```dart 
 // ignore_for_file: unused_local_variable
 
-import 'package:alfred/alfred.dart';
+import '';
 import 'package:general_lib/general_lib.dart';
 import 'package:whatsapp_client/whatsapp_client.dart';
 import 'package:whatsapp_client/whatsapp_client/whatsapp_client_data.dart';

@@ -30,10 +30,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-import 'package:alfred/alfred.dart';
+// import '';
+
+import 'package:server_universe_dart/native/native.dart';
 
 class WhatsAppClientBotApiOption {
-  Alfred? alfred;
+  ServerUniverseNative? serverUniverseNative;
   String tokenBot;
   Map<dynamic, dynamic>? clientOption;
   String whatsAppCryptoKey;
@@ -41,7 +43,7 @@ class WhatsAppClientBotApiOption {
   Uri? urlWaBotApi;
   bool? isInvokeThrowOnError;
   WhatsAppClientBotApiOption({
-    required this.alfred,
+    required this.serverUniverseNative,
     required this.tokenBot,
     this.clientOption,
     this.whatsAppCryptoKey = "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb",

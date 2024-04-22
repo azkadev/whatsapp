@@ -35,9 +35,10 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:alfred/alfred.dart';
+// import '';
 import 'package:general_lib/general_lib.dart';
 import 'package:http/http.dart';
+import 'package:server_universe_dart/native/native.dart';
 import 'package:whatsapp_client/scheme/scheme.dart';
 import 'package:whatsapp_client/whatsapp_bot_api/whatsapp_bot_api_update.dart';
 
@@ -45,7 +46,7 @@ class WhatsAppBotApi {
   bool is_invoke_throw_on_error = true;
 
   late String token_bot;
-  Alfred? alfred;
+  ServerUniverseNative? serverUniverseNative;
   bool is_init_server = false;
   Uri whatsapp_url_webhook = Uri.parse("http://0.0.0.0:8080/wa/webhook");
   Crypto whats_app_crypto = Crypto(key: "");
@@ -60,7 +61,7 @@ class WhatsAppBotApi {
   WhatsAppBotApi({
     required String tokenBot,
     Map? clientOption,
-    this.alfred,
+    this.serverUniverseNative,
     String whatsAppCryptoKey = "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb",
     EventEmitter? eventEmitter,
     this.event_invoke = "invoke",
@@ -94,20 +95,18 @@ class WhatsAppBotApi {
   }
 
   void initServer() {
-    if (alfred != null) {
+    if (serverUniverseNative != null) {
       if (Dart.isWeb == false) {
         if (is_init_server == false) {
           is_init_server = true;
 
-          alfred!.post(whatsapp_url_webhook.path,
-              (HttpRequest req, HttpResponse res) async {
+          serverUniverseNative!.post(whatsapp_url_webhook.path, (HttpRequest req, HttpResponse res) async {
             try {
               Map query = (req.uri.queryParameters).clone();
               Map<String, dynamic> body = ((await req.bodyAsJsonMap));
 
               try {
-                query["wa-client"] =
-                    req.uri.query.replaceAll(RegExp("^(wa=)"), "");
+                query["wa-client"] = req.uri.query.replaceAll(RegExp("^(wa=)"), "");
               } catch (e) {}
 
               event_emitter.emit(
@@ -139,17 +138,13 @@ class WhatsAppBotApi {
       if (query["wa"] is String == false) {
         query["wa"] = "";
       }
-      Map decyprt = json.decode(whats_app_crypto.decrypt(
-          data_base64:
-              (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
+      Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
       return WaClientData(decyprt);
     } catch (e) {
       if (query["wa-client"] is String == false) {
         query["wa-client"] = "";
       }
-      Map decyprt = json.decode(whats_app_crypto.decrypt(
-          data_base64:
-              (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
+      Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
       return WaClientData(decyprt);
     }
   }
@@ -180,8 +175,7 @@ class WhatsAppBotApi {
       "owner_tg_user_id": owner_tg_user_id,
       "from_tg_bot_user_id": from_tg_bot_user_id,
     };
-    String? query_telegram_webhook =
-        whats_app_crypto.encryptMapToBase64(data: client_data);
+    String? query_telegram_webhook = whats_app_crypto.encryptMapToBase64(data: client_data);
     Map result_webhook = await request(
       (isCreateclient) ? "createClient" : "setWebhook",
       parameters: {
@@ -234,8 +228,7 @@ class WhatsAppBotApi {
     );
   }
 
-  Listener on(String type_update,
-      FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
+  Listener on(String type_update, FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
     return event_emitter.on(type_update, null, (Event ev, context) async {
       try {
         if (ev.eventData is UpdateWaBot) {

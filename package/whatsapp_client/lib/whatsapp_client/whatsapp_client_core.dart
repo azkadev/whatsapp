@@ -73,15 +73,14 @@ class WhatsAppClient {
     bool is_init_whatsapp_bot_api = true,
     WhatsAppClientBotApiOption? whatsAppClientBotApiOption,
   }) {
-    whatsAppClientBotApiOption ??=
-        WhatsAppClientBotApiOption(tokenBot: "", alfred: null);
+    whatsAppClientBotApiOption ??= WhatsAppClientBotApiOption(tokenBot: "", serverUniverseNative: null);
     if (is_init_walib) {}
 
     if (is_init_whatsapp_bot_api) {
       whatsAppBotApi = WhatsAppBotApi(
         tokenBot: whatsAppClientBotApiOption.tokenBot,
         clientOption: whatsAppClientBotApiOption.clientOption,
-        alfred: whatsAppClientBotApiOption.alfred,
+        serverUniverseNative: whatsAppClientBotApiOption.serverUniverseNative,
         whatsAppCryptoKey: whatsAppClientBotApiOption.whatsAppCryptoKey,
         eventEmitter: event_emitter,
         event_invoke: event_invoke,
@@ -100,18 +99,14 @@ class WhatsAppClient {
   /// return original data json
   Listener on({
     required String event_name,
-    required FutureOr<dynamic> Function(
-            UpdateWhatsAppClient updateWhatsAppClient)
-        onUpdate,
-    required FutureOr<dynamic> Function(Object error, StackTrace stackTrace)
-        onError,
+    required FutureOr<dynamic> Function(UpdateWhatsAppClient updateWhatsAppClient) onUpdate,
+    required FutureOr<dynamic> Function(Object error, StackTrace stackTrace) onError,
   }) {
     return event_emitter.on(event_name, null, (ev, context) async {
       try {
         if (ev.eventData is UpdateWaBot) {
           UpdateWaBot updateWaBot = (ev.eventData as UpdateWaBot);
-          WaClientData waClientData =
-              whatsAppBotApi.waClientData(query: updateWaBot.query);
+          WaClientData waClientData = whatsAppBotApi.waClientData(query: updateWaBot.query);
           await onUpdate(
             UpdateWhatsAppClient(
               tg_uri: updateWaBot.uri,
@@ -152,8 +147,8 @@ class WhatsAppClient {
     Uri? urlWaBotApi,
     Client? httpClient,
   }) async {
-    if (whatsAppClientData.whatsAppClientType ==
-        WhatsAppClientType.whats_app_bot_api) {
+    if (whatsAppClientData.whatsAppClientType == WhatsAppClientType.whats_app_bot_api) {
+      parameters["@token"] = whatsAppClientData.whats_app_token_bot;
       Map respond = await whatsAppBotApi.request(
         parameters["@type"],
         tokenBot: whatsAppClientData.whats_app_token_bot,
@@ -165,10 +160,6 @@ class WhatsAppClient {
       return respond;
     }
 
-    return {
-      "@type": "error",
-      "code": 500,
-      "message": "whatsapp_client_type_not_found"
-    };
+    return {"@type": "error", "code": 500, "message": "whatsapp_client_type_not_found"};
   }
 }
