@@ -38,7 +38,7 @@ import 'dart:convert';
 // import '';
 import 'package:general_lib/general_lib.dart';
 import 'package:http/http.dart';
-import 'package:server_universe_dart/native/native.dart';
+import 'package:server_universe/native/native.dart';
 import 'package:whatsapp_client/scheme/scheme.dart';
 import 'package:whatsapp_client/whatsapp_bot_api/whatsapp_bot_api_update.dart';
 

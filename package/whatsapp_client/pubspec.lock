@@ -9,14 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "67.0.0"
-  alfred:
-    dependency: transitive
-    description:
-      name: alfred
-      sha256: "61c74bfccd41447ddb7eb76e0e1204e1b1da0c099d441d00fa8d2b86de5415e3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.1"
   analyzer:
     dependency: transitive
     description:
@@ -205,10 +197,10 @@ packages:
     dependency: "direct main"
     description:
       name: general_lib
-      sha256: "417b758435d0027578891dd6a8acc0a33cf1582e96964d89615d4af935c9da7f"
+      sha256: d82b6cc3b154fadca42b74139b5321f40820956e812071b4c8ac57a28951fc84
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.35"
+    version: "0.0.37"
   github:
     dependency: transitive
     description:
@@ -401,22 +393,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.0"
-  server_universe_dart:
+  server_universe:
     dependency: "direct main"
     description:
-      name: server_universe_dart
-      sha256: "670c3bc2dce44356706474ef4aaa52c75ad54766cc54fce2bc973456f5b3eda5"
+      name: server_universe
+      sha256: f916bb99ca050533f573eb6c2e3dc11ececd8556df1f1cf4df555d1746f24e3f
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.1"
-  server_universe_scheme:
-    dependency: transitive
-    description:
-      name: server_universe_scheme
-      sha256: "2c6313ce45bcbbd86322de16d10114128deb5213213c36cd92bb8571c82ebd92"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.1"
+    version: "0.0.12"
   shelf:
     dependency: transitive
     description:
