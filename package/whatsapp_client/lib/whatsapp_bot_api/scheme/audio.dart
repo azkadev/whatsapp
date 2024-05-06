@@ -38,20 +38,35 @@ import "package:general_lib/general_lib.dart";
 
 import "context_info.dart";
 
- 
 class Audio extends JsonScheme {
-
-  
   Audio(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"audio","url":"","mimetype":"audio/mpeg","fileSha256":"","fileLength":"388702","seconds":12,"ptt":false,"mediaKey":"+n5o=","fileEncSha256":"CvG4V/+=","directPath":"/v/t62.7114-24/.enc?ccb=11-4&oh=-uQ&oe=64A9B93D","mediaKeyTimestamp":"1686254281","contextInfo":{"@type":"contextInfo","expiration":604800,"ephemeralSettingTimestamp":"1675329","disappearingMode":{"initiator":"INITIATED_BY_ME"}},"waveform":"=="};
+    return {
+      "@type": "audio",
+      "url": "",
+      "mimetype": "audio/mpeg",
+      "fileSha256": "",
+      "fileLength": "388702",
+      "seconds": 12,
+      "ptt": false,
+      "mediaKey": "+n5o=",
+      "fileEncSha256": "CvG4V/+=",
+      "directPath": "/v/t62.7114-24/.enc?ccb=11-4&oh=-uQ&oe=64A9B93D",
+      "mediaKeyTimestamp": "1686254281",
+      "contextInfo": {
+        "@type": "contextInfo",
+        "expiration": 604800,
+        "ephemeralSettingTimestamp": "1675329",
+        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
+      },
+      "waveform": "=="
+    };
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -60,16 +75,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set special_type(String? value) {
     rawData["@type"] = value;
   }
 
-
-  
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -78,16 +90,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set url(String? value) {
     rawData["url"] = value;
   }
 
-
-  
   String? get mimetype {
     try {
-      if (rawData["mimetype"] is String == false){
+      if (rawData["mimetype"] is String == false) {
         return null;
       }
       return rawData["mimetype"] as String;
@@ -96,16 +105,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set mimetype(String? value) {
     rawData["mimetype"] = value;
   }
 
-
-  
   String? get filesha256 {
     try {
-      if (rawData["fileSha256"] is String == false){
+      if (rawData["fileSha256"] is String == false) {
         return null;
       }
       return rawData["fileSha256"] as String;
@@ -114,16 +120,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set filesha256(String? value) {
     rawData["fileSha256"] = value;
   }
 
-
-  
   String? get filelength {
     try {
-      if (rawData["fileLength"] is String == false){
+      if (rawData["fileLength"] is String == false) {
         return null;
       }
       return rawData["fileLength"] as String;
@@ -132,16 +135,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set filelength(String? value) {
     rawData["fileLength"] = value;
   }
 
-
-  
   num? get seconds {
     try {
-      if (rawData["seconds"] is num == false){
+      if (rawData["seconds"] is num == false) {
         return null;
       }
       return rawData["seconds"] as num;
@@ -150,16 +150,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set seconds(num? value) {
     rawData["seconds"] = value;
   }
 
-
-  
   bool? get ptt {
     try {
-      if (rawData["ptt"] is bool == false){
+      if (rawData["ptt"] is bool == false) {
         return null;
       }
       return rawData["ptt"] as bool;
@@ -168,16 +165,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set ptt(bool? value) {
     rawData["ptt"] = value;
   }
 
-
-  
   String? get mediakey {
     try {
-      if (rawData["mediaKey"] is String == false){
+      if (rawData["mediaKey"] is String == false) {
         return null;
       }
       return rawData["mediaKey"] as String;
@@ -186,16 +180,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set mediakey(String? value) {
     rawData["mediaKey"] = value;
   }
 
-
-  
   String? get fileencsha256 {
     try {
-      if (rawData["fileEncSha256"] is String == false){
+      if (rawData["fileEncSha256"] is String == false) {
         return null;
       }
       return rawData["fileEncSha256"] as String;
@@ -204,16 +195,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set fileencsha256(String? value) {
     rawData["fileEncSha256"] = value;
   }
 
-
-  
   String? get directpath {
     try {
-      if (rawData["directPath"] is String == false){
+      if (rawData["directPath"] is String == false) {
         return null;
       }
       return rawData["directPath"] as String;
@@ -222,16 +210,13 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set directpath(String? value) {
     rawData["directPath"] = value;
   }
 
-
-  
   String? get mediakeytimestamp {
     try {
-      if (rawData["mediaKeyTimestamp"] is String == false){
+      if (rawData["mediaKeyTimestamp"] is String == false) {
         return null;
       }
       return rawData["mediaKeyTimestamp"] as String;
@@ -240,36 +225,28 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set mediakeytimestamp(String? value) {
     rawData["mediaKeyTimestamp"] = value;
   }
 
-
-  
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false){
-        return ContextInfo({}); 
+      if (rawData["contextInfo"] is Map == false) {
+        return ContextInfo({});
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {  
-      return ContextInfo({}); 
+    } catch (e) {
+      return ContextInfo({});
     }
   }
 
-
-  
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
-
-
-  
   String? get waveform {
     try {
-      if (rawData["waveform"] is String == false){
+      if (rawData["waveform"] is String == false) {
         return null;
       }
       return rawData["waveform"] as String;
@@ -278,15 +255,11 @@ class Audio extends JsonScheme {
     }
   }
 
-  
   set waveform(String? value) {
     rawData["waveform"] = value;
   }
 
-
-  
   static Audio create({
-
     String special_type = "audio",
     String? url,
     String? mimetype,
@@ -298,12 +271,11 @@ class Audio extends JsonScheme {
     String? fileencsha256,
     String? directpath,
     String? mediakeytimestamp,
-      ContextInfo? contextinfo,
+    ContextInfo? contextinfo,
     String? waveform,
-})  {
+  }) {
     // Audio audio = Audio({
-Map audio_data_create_json = {
-  
+    Map audio_data_create_json = {
       "@type": special_type,
       "url": url,
       "mimetype": mimetype,
@@ -315,19 +287,13 @@ Map audio_data_create_json = {
       "fileEncSha256": fileencsha256,
       "directPath": directpath,
       "mediaKeyTimestamp": mediakeytimestamp,
-      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
+      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
       "waveform": waveform,
+    };
 
+    audio_data_create_json.removeWhere((key, value) => value == null);
+    Audio audio_data_create = Audio(audio_data_create_json);
 
-};
-
-
-          audio_data_create_json.removeWhere((key, value) => value == null);
-Audio audio_data_create = Audio(audio_data_create_json);
-
-return audio_data_create;
-
-
-
-      }
+    return audio_data_create;
+  }
 }

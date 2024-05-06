@@ -38,20 +38,23 @@ import "package:general_lib/general_lib.dart";
 
 import "authorization_state_waits_scan_qr.dart";
 
- 
 class UpdateAuthorizationState extends JsonScheme {
-
-  
   UpdateAuthorizationState(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"updateAuthorizationState","authorization_state":{"@type":"authorizationStateWaitsScanQr","qr":"","client":{"@type":"clientData","id":"","name":""}}};
+    return {
+      "@type": "updateAuthorizationState",
+      "authorization_state": {
+        "@type": "authorizationStateWaitsScanQr",
+        "qr": "",
+        "client": {"@type": "clientData", "id": "", "name": ""}
+      }
+    };
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -60,54 +63,42 @@ class UpdateAuthorizationState extends JsonScheme {
     }
   }
 
-  
   set special_type(String? value) {
     rawData["@type"] = value;
   }
 
-
-  
   AuthorizationStateWaitsScanQr get authorization_state {
     try {
-      if (rawData["authorization_state"] is Map == false){
-        return AuthorizationStateWaitsScanQr({}); 
+      if (rawData["authorization_state"] is Map == false) {
+        return AuthorizationStateWaitsScanQr({});
       }
-      return AuthorizationStateWaitsScanQr(rawData["authorization_state"] as Map);
-    } catch (e) {  
-      return AuthorizationStateWaitsScanQr({}); 
+      return AuthorizationStateWaitsScanQr(
+          rawData["authorization_state"] as Map);
+    } catch (e) {
+      return AuthorizationStateWaitsScanQr({});
     }
   }
 
-
-  
   set authorization_state(AuthorizationStateWaitsScanQr value) {
     rawData["authorization_state"] = value.toJson();
   }
 
-
-
-  
   static UpdateAuthorizationState create({
-
     String special_type = "updateAuthorizationState",
-      AuthorizationStateWaitsScanQr? authorization_state,
-})  {
+    AuthorizationStateWaitsScanQr? authorization_state,
+  }) {
     // UpdateAuthorizationState updateAuthorizationState = UpdateAuthorizationState({
-Map updateAuthorizationState_data_create_json = {
-  
+    Map updateAuthorizationState_data_create_json = {
       "@type": special_type,
-      "authorization_state": (authorization_state != null)?authorization_state.toJson(): null,
+      "authorization_state":
+          (authorization_state != null) ? authorization_state.toJson() : null,
+    };
 
+    updateAuthorizationState_data_create_json
+        .removeWhere((key, value) => value == null);
+    UpdateAuthorizationState updateAuthorizationState_data_create =
+        UpdateAuthorizationState(updateAuthorizationState_data_create_json);
 
-};
-
-
-          updateAuthorizationState_data_create_json.removeWhere((key, value) => value == null);
-UpdateAuthorizationState updateAuthorizationState_data_create = UpdateAuthorizationState(updateAuthorizationState_data_create_json);
-
-return updateAuthorizationState_data_create;
-
-
-
-      }
+    return updateAuthorizationState_data_create;
+  }
 }

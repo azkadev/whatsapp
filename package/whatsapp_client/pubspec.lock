@@ -197,10 +197,10 @@ packages:
     dependency: "direct main"
     description:
       name: general_lib
-      sha256: d82b6cc3b154fadca42b74139b5321f40820956e812071b4c8ac57a28951fc84
+      sha256: "0a7f8153446681257ba5cd4b03fbe8eb3495270f70ec04f00bc600f0eacdef4c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.37"
+    version: "0.0.38"
   github:
     dependency: transitive
     description:
@@ -341,10 +341,10 @@ packages:
     dependency: "direct main"
     description:
       name: packagex
-      sha256: e8df6e41bde31823282864d84cd342311cb0aabe079b111a6880551d4a58a8f9
+      sha256: f01f85ba245f55f9b5a4819666bf3dbc5415770b20351c97b0d39c5d6d233202
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.50"
+    version: "0.0.55"
   path:
     dependency: "direct main"
     description:
@@ -397,10 +397,10 @@ packages:
     dependency: "direct main"
     description:
       name: server_universe
-      sha256: f916bb99ca050533f573eb6c2e3dc11ececd8556df1f1cf4df555d1746f24e3f
+      sha256: f0f87e963e89262b02565c430d4b97c449d85ef2ec289db0bd8a68a75965d2c1
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.12"
+    version: "0.0.13"
   shelf:
     dependency: transitive
     description:
@@ -489,6 +489,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  system_info_fetch:
+    dependency: transitive
+    description:
+      name: system_info_fetch
+      sha256: "215bb4dbe569de208554eab8075cad984d990cf7db00e4db6b6c109d553ea9c1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.17"
   term_glyph:
     dependency: transitive
     description:
@@ -626,4 +634,4 @@ packages:
     source: hosted
     version: "2.0.0"
 sdks:
-  dart: ">=3.3.0 <4.0.0"
+  dart: ">=3.3.3 <4.0.0"

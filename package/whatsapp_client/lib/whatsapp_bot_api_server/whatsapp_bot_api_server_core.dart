@@ -42,8 +42,6 @@ import 'package:universal_io/io.dart';
 import 'wa_bot_api_script.dart';
 import "package:path/path.dart" as path;
 
-import "package:packagex/shell/shell.dart";
-
 enum WhasAppBotApiScriptLanguageCodeType {
   js,
   dart,
@@ -127,61 +125,49 @@ class WhatsAppBotApiServer {
     }
 
     if (is_not_found_folder) {
-      await shell(
-        executable: "npm",
-        arguments: [
+      List<List<String>> npms = [
+        [
           "install",
           "-g",
           "npm@latest",
         ],
-        workingDirectory: directory_target.path,
-        runInShell: false,
-        onStdout: (data, executable, arguments, workingDirectory, environment,
-            includeParentEnvironment, runInShell, mode) {
-          stdout.add(data);
-        },
-        onStderr: (data, executable, arguments, workingDirectory, environment,
-            includeParentEnvironment, runInShell, mode) {
-          stderr.add(data);
-        },
-      );
-      await shell(
-        executable: "npm",
-        arguments: [
-          "install",
-        ],
-        workingDirectory: directory_target.path,
-        runInShell: false,
-        onStdout: (data, executable, arguments, workingDirectory, environment,
-            includeParentEnvironment, runInShell, mode) {
-          stdout.add(data);
-        },
-        onStderr: (data, executable, arguments, workingDirectory, environment,
-            includeParentEnvironment, runInShell, mode) {
-          stderr.add(data);
-        },
-      );
+        ["install"]
+      ];
+      for (var element in npms) {
+        Process npm_procces = await Process.start(
+          "npm",
+          element,
+          workingDirectory: directory_target.path,
+          runInShell: false,
+        );
+        npm_procces.stderr.listen((event) {
+          stderr.add(event);
+        });
+        npm_procces.stdout.listen((event) {
+          stdout.add(event);
+        });
+        await npm_procces.exitCode;
+      }
     }
 
     if (is_update_node_module) {
-      await shell(
-        executable: "npm",
-        arguments: [
-          "install",
-        ],
+      Process npm_procces = await Process.start(
+        "npm",
+        ["install"],
         workingDirectory: directory_target.path,
         runInShell: false,
-        onStdout: (data, executable, arguments, workingDirectory, environment,
-            includeParentEnvironment, runInShell, mode) {
-          stdout.add(data);
-        },
-        onStderr: (data, executable, arguments, workingDirectory, environment,
-            includeParentEnvironment, runInShell, mode) {
-          stderr.add(data);
-        },
       );
+      npm_procces.stderr.listen((event) {
+        stderr.add(event);
+      });
+      npm_procces.stdout.listen((event) {
+        stdout.add(event);
+      });
+      await npm_procces.exitCode;
     }
   }
+
+  static int pid_wa_bot_server = 0;
 
   Future<Process> runWaBotApiJs({
     required String host,
@@ -228,6 +214,7 @@ class WhatsAppBotApiServer {
         "whatsapp_client_crypto_key": whatsapp_client_crypto_key,
       },
     );
+    pid_wa_bot_server = shell_wa_bot.pid;
     StreamSubscription<List<int>>? stderr_wa;
     StreamSubscription<List<int>>? stdout_wa;
     if (is_print) {

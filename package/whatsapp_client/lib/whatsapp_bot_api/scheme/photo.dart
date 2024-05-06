@@ -38,20 +38,40 @@ import "package:general_lib/general_lib.dart";
 
 import "context_info.dart";
 
- 
 class Photo extends JsonScheme {
-
-  
   Photo(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"photo","url":"","mimetype":"image/jpeg","fileSha256":"","fileLength":"9907","height":244,"width":244,"mediaKey":"","fileEncSha256":"","directPath":"/v/t62.7118-24/.enc?ccb=11-4&oh=-uw&oe=64A98F47","mediaKeyTimestamp":"1686254143","jpegThumbnail":"/9j///2c7Z///////////////Zztn/////////////////////9oACAEBAAE//++//+/ACGL/UDxk3xj2zPGAquBiBo9vABFM+/+NB/rH8P//9oACAECAQE/AAf//9oACAEDAQE/AAf/2Q==","contextInfo":{"@type":"contextInfo","expiration":604800,"ephemeralSettingTimestamp":"1675329","disappearingMode":{"initiator":"INITIATED_BY_ME"}},"scansSidecar":"65Rc6/Xd/F/9sRX7FBhUtvmfU6OTWJDwxXdkq+kQt73Ce+7v3QJCAg==","scanLengths":[917,5469,2010,1511],"midQualityFileSha256":"1o/Mh6JtHkvlaRbhGWPPoonzJUNU7iLAFLZY6z3NAK4="};
+    return {
+      "@type": "photo",
+      "url": "",
+      "mimetype": "image/jpeg",
+      "fileSha256": "",
+      "fileLength": "9907",
+      "height": 244,
+      "width": 244,
+      "mediaKey": "",
+      "fileEncSha256": "",
+      "directPath": "/v/t62.7118-24/.enc?ccb=11-4&oh=-uw&oe=64A98F47",
+      "mediaKeyTimestamp": "1686254143",
+      "jpegThumbnail":
+          "/9j///2c7Z///////////////Zztn/////////////////////9oACAEBAAE//++//+/ACGL/UDxk3xj2zPGAquBiBo9vABFM+/+NB/rH8P//9oACAECAQE/AAf//9oACAEDAQE/AAf/2Q==",
+      "contextInfo": {
+        "@type": "contextInfo",
+        "expiration": 604800,
+        "ephemeralSettingTimestamp": "1675329",
+        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
+      },
+      "scansSidecar":
+          "65Rc6/Xd/F/9sRX7FBhUtvmfU6OTWJDwxXdkq+kQt73Ce+7v3QJCAg==",
+      "scanLengths": [917, 5469, 2010, 1511],
+      "midQualityFileSha256": "1o/Mh6JtHkvlaRbhGWPPoonzJUNU7iLAFLZY6z3NAK4="
+    };
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -60,16 +80,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set special_type(String? value) {
     rawData["@type"] = value;
   }
 
-
-  
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -78,16 +95,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set url(String? value) {
     rawData["url"] = value;
   }
 
-
-  
   String? get mimetype {
     try {
-      if (rawData["mimetype"] is String == false){
+      if (rawData["mimetype"] is String == false) {
         return null;
       }
       return rawData["mimetype"] as String;
@@ -96,16 +110,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set mimetype(String? value) {
     rawData["mimetype"] = value;
   }
 
-
-  
   String? get filesha256 {
     try {
-      if (rawData["fileSha256"] is String == false){
+      if (rawData["fileSha256"] is String == false) {
         return null;
       }
       return rawData["fileSha256"] as String;
@@ -114,16 +125,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set filesha256(String? value) {
     rawData["fileSha256"] = value;
   }
 
-
-  
   String? get filelength {
     try {
-      if (rawData["fileLength"] is String == false){
+      if (rawData["fileLength"] is String == false) {
         return null;
       }
       return rawData["fileLength"] as String;
@@ -132,16 +140,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set filelength(String? value) {
     rawData["fileLength"] = value;
   }
 
-
-  
   num? get height {
     try {
-      if (rawData["height"] is num == false){
+      if (rawData["height"] is num == false) {
         return null;
       }
       return rawData["height"] as num;
@@ -150,16 +155,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set height(num? value) {
     rawData["height"] = value;
   }
 
-
-  
   num? get width {
     try {
-      if (rawData["width"] is num == false){
+      if (rawData["width"] is num == false) {
         return null;
       }
       return rawData["width"] as num;
@@ -168,16 +170,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set width(num? value) {
     rawData["width"] = value;
   }
 
-
-  
   String? get mediakey {
     try {
-      if (rawData["mediaKey"] is String == false){
+      if (rawData["mediaKey"] is String == false) {
         return null;
       }
       return rawData["mediaKey"] as String;
@@ -186,16 +185,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set mediakey(String? value) {
     rawData["mediaKey"] = value;
   }
 
-
-  
   String? get fileencsha256 {
     try {
-      if (rawData["fileEncSha256"] is String == false){
+      if (rawData["fileEncSha256"] is String == false) {
         return null;
       }
       return rawData["fileEncSha256"] as String;
@@ -204,16 +200,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set fileencsha256(String? value) {
     rawData["fileEncSha256"] = value;
   }
 
-
-  
   String? get directpath {
     try {
-      if (rawData["directPath"] is String == false){
+      if (rawData["directPath"] is String == false) {
         return null;
       }
       return rawData["directPath"] as String;
@@ -222,16 +215,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set directpath(String? value) {
     rawData["directPath"] = value;
   }
 
-
-  
   String? get mediakeytimestamp {
     try {
-      if (rawData["mediaKeyTimestamp"] is String == false){
+      if (rawData["mediaKeyTimestamp"] is String == false) {
         return null;
       }
       return rawData["mediaKeyTimestamp"] as String;
@@ -240,16 +230,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set mediakeytimestamp(String? value) {
     rawData["mediaKeyTimestamp"] = value;
   }
 
-
-  
   String? get jpegthumbnail {
     try {
-      if (rawData["jpegThumbnail"] is String == false){
+      if (rawData["jpegThumbnail"] is String == false) {
         return null;
       }
       return rawData["jpegThumbnail"] as String;
@@ -258,36 +245,28 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set jpegthumbnail(String? value) {
     rawData["jpegThumbnail"] = value;
   }
 
-
-  
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false){
-        return ContextInfo({}); 
+      if (rawData["contextInfo"] is Map == false) {
+        return ContextInfo({});
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {  
-      return ContextInfo({}); 
+    } catch (e) {
+      return ContextInfo({});
     }
   }
 
-
-  
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
-
-
-  
   String? get scanssidecar {
     try {
-      if (rawData["scansSidecar"] is String == false){
+      if (rawData["scansSidecar"] is String == false) {
         return null;
       }
       return rawData["scansSidecar"] as String;
@@ -296,16 +275,13 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set scanssidecar(String? value) {
     rawData["scansSidecar"] = value;
   }
 
-
-  
   List<num> get scanlengths {
     try {
-      if (rawData["scanLengths"] is List == false){
+      if (rawData["scanLengths"] is List == false) {
         return [];
       }
       return (rawData["scanLengths"] as List).cast<num>();
@@ -314,17 +290,13 @@ class Photo extends JsonScheme {
     }
   }
 
-
-  
   set scanlengths(List<num> value) {
     rawData["scanLengths"] = value;
   }
 
-
-  
   String? get midqualityfilesha256 {
     try {
-      if (rawData["midQualityFileSha256"] is String == false){
+      if (rawData["midQualityFileSha256"] is String == false) {
         return null;
       }
       return rawData["midQualityFileSha256"] as String;
@@ -333,15 +305,11 @@ class Photo extends JsonScheme {
     }
   }
 
-  
   set midqualityfilesha256(String? value) {
     rawData["midQualityFileSha256"] = value;
   }
 
-
-  
   static Photo create({
-
     String special_type = "photo",
     String? url,
     String? mimetype,
@@ -354,14 +322,13 @@ class Photo extends JsonScheme {
     String? directpath,
     String? mediakeytimestamp,
     String? jpegthumbnail,
-      ContextInfo? contextinfo,
+    ContextInfo? contextinfo,
     String? scanssidecar,
-      List<num>? scanlengths,
+    List<num>? scanlengths,
     String? midqualityfilesha256,
-})  {
+  }) {
     // Photo photo = Photo({
-Map photo_data_create_json = {
-  
+    Map photo_data_create_json = {
       "@type": special_type,
       "url": url,
       "mimetype": mimetype,
@@ -374,21 +341,15 @@ Map photo_data_create_json = {
       "directPath": directpath,
       "mediaKeyTimestamp": mediakeytimestamp,
       "jpegThumbnail": jpegthumbnail,
-      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
+      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
       "scansSidecar": scanssidecar,
       "scanLengths": scanlengths,
       "midQualityFileSha256": midqualityfilesha256,
+    };
 
+    photo_data_create_json.removeWhere((key, value) => value == null);
+    Photo photo_data_create = Photo(photo_data_create_json);
 
-};
-
-
-          photo_data_create_json.removeWhere((key, value) => value == null);
-Photo photo_data_create = Photo(photo_data_create_json);
-
-return photo_data_create;
-
-
-
-      }
+    return photo_data_create;
+  }
 }

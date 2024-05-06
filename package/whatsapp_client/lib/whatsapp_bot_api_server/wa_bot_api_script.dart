@@ -70,7 +70,7 @@ List<WaBotApiScript> waBotApiScripts = [
           "galaxeus_lib": "^0.0.7",
           "glob": "^10.2.7",
           "node-fetch": "^2.6.0",
-          "whatsapp_client": "^0.0.37",
+          "whatsapp_client": "^0.0.38",
         },
       },
     ),

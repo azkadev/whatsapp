@@ -36,21 +36,16 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
- 
 class DisappearingMode extends JsonScheme {
-
-  
   DisappearingMode(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"disappearingMode","initiator":"INITIATED_BY_ME"};
+    return {"@type": "disappearingMode", "initiator": "INITIATED_BY_ME"};
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -59,16 +54,13 @@ class DisappearingMode extends JsonScheme {
     }
   }
 
-  
   set special_type(String? value) {
     rawData["@type"] = value;
   }
 
-
-  
   String? get initiator {
     try {
-      if (rawData["initiator"] is String == false){
+      if (rawData["initiator"] is String == false) {
         return null;
       }
       return rawData["initiator"] as String;
@@ -77,34 +69,25 @@ class DisappearingMode extends JsonScheme {
     }
   }
 
-  
   set initiator(String? value) {
     rawData["initiator"] = value;
   }
 
-
-  
   static DisappearingMode create({
-
     String special_type = "disappearingMode",
     String? initiator,
-})  {
+  }) {
     // DisappearingMode disappearingMode = DisappearingMode({
-Map disappearingMode_data_create_json = {
-  
+    Map disappearingMode_data_create_json = {
       "@type": special_type,
       "initiator": initiator,
+    };
 
+    disappearingMode_data_create_json
+        .removeWhere((key, value) => value == null);
+    DisappearingMode disappearingMode_data_create =
+        DisappearingMode(disappearingMode_data_create_json);
 
-};
-
-
-          disappearingMode_data_create_json.removeWhere((key, value) => value == null);
-DisappearingMode disappearingMode_data_create = DisappearingMode(disappearingMode_data_create_json);
-
-return disappearingMode_data_create;
-
-
-
-      }
+    return disappearingMode_data_create;
+  }
 }

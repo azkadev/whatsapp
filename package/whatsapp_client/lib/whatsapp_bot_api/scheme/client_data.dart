@@ -36,21 +36,16 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
- 
 class ClientData extends JsonScheme {
-
-  
   ClientData(super.rawData);
-   
+
   static Map get defaultData {
-    return {"@type":"clientData","id":"","name":""};
+    return {"@type": "clientData", "id": "", "name": ""};
   }
 
-  
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -59,16 +54,13 @@ class ClientData extends JsonScheme {
     }
   }
 
-  
   set special_type(String? value) {
     rawData["@type"] = value;
   }
 
-
-  
   String? get id {
     try {
-      if (rawData["id"] is String == false){
+      if (rawData["id"] is String == false) {
         return null;
       }
       return rawData["id"] as String;
@@ -77,16 +69,13 @@ class ClientData extends JsonScheme {
     }
   }
 
-  
   set id(String? value) {
     rawData["id"] = value;
   }
 
-
-  
   String? get name {
     try {
-      if (rawData["name"] is String == false){
+      if (rawData["name"] is String == false) {
         return null;
       }
       return rawData["name"] as String;
@@ -95,36 +84,25 @@ class ClientData extends JsonScheme {
     }
   }
 
-  
   set name(String? value) {
     rawData["name"] = value;
   }
 
-
-  
   static ClientData create({
-
     String special_type = "clientData",
     String? id,
     String? name,
-})  {
+  }) {
     // ClientData clientData = ClientData({
-Map clientData_data_create_json = {
-  
+    Map clientData_data_create_json = {
       "@type": special_type,
       "id": id,
       "name": name,
+    };
 
+    clientData_data_create_json.removeWhere((key, value) => value == null);
+    ClientData clientData_data_create = ClientData(clientData_data_create_json);
 
-};
-
-
-          clientData_data_create_json.removeWhere((key, value) => value == null);
-ClientData clientData_data_create = ClientData(clientData_data_create_json);
-
-return clientData_data_create;
-
-
-
-      }
+    return clientData_data_create;
+  }
 }

@@ -40,7 +40,17 @@ class WaClientData extends JsonScheme {
   WaClientData(super.rawData);
 
   static Map get defaultData {
-    return {"@type": "waClientData", "client_token": "", "owner_tg_user_id": 0, "client_type": "", "client_title": "", "client_username": "", "from_tg_bot_user_id": 0, "expire_date": 0, "version": ""};
+    return {
+      "@type": "waClientData",
+      "client_token": "",
+      "owner_tg_user_id": 0,
+      "client_type": "",
+      "client_title": "",
+      "client_username": "",
+      "from_tg_bot_user_id": 0,
+      "expire_date": 0,
+      "version": ""
+    };
   }
 
   String? get special_type {
@@ -203,7 +213,8 @@ class WaClientData extends JsonScheme {
     };
 
     waClientData_data_create_json.removeWhere((key, value) => value == null);
-    WaClientData waClientData_data_create = WaClientData(waClientData_data_create_json);
+    WaClientData waClientData_data_create =
+        WaClientData(waClientData_data_create_json);
 
     return waClientData_data_create;
   }
