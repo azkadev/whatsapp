@@ -239,7 +239,7 @@ class WhatsAppBotApi {
     );
   }
 
-  Listener on(String type_update,
+  EventEmitterListener on(String type_update,
       FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
     return event_emitter.on(type_update, null, (Event ev, context) async {
       try {

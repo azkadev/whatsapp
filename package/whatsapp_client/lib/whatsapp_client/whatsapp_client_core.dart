@@ -100,7 +100,7 @@ class WhatsAppClient {
   Future<void> autoSetData(UpdateWhatsAppClient updateWhatsAppClient) async {}
 
   /// return original data json
-  Listener on({
+  EventEmitterListener on({
     required String event_name,
     required FutureOr<dynamic> Function(
             UpdateWhatsAppClient updateWhatsAppClient)
