@@ -54,7 +54,7 @@ dependencies:
   mime: ^1.0.5
   # general_lib: ^0.0.27 
   # telegram_client: ^0.8.6
-  server_universe: ^0.0.15
+  server_universe: ^0.0.16
   # server_universe_http_client: ^0.0.1
 
 dependency_overrides:
