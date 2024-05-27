@@ -104,15 +104,13 @@ class WhatsAppBotApi {
         if (is_init_server == false) {
           is_init_server = true;
 
-          serverUniverseNative!.post(whatsapp_url_webhook.path,
-              (HttpRequest req, HttpResponse res) async {
+          serverUniverseNative!.post(whatsapp_url_webhook.path, (HttpRequest req, HttpResponse res) async {
             try {
               Map query = (req.uri.queryParameters).clone();
               Map<String, dynamic> body = ((await req.bodyAsJsonMap));
 
               try {
-                query["wa-client"] =
-                    req.uri.query.replaceAll(RegExp("^(wa=)"), "");
+                query["wa-client"] = req.uri.query.replaceAll(RegExp("^(wa=)"), "");
               } catch (e) {}
 
               event_emitter.emit(
@@ -144,17 +142,13 @@ class WhatsAppBotApi {
       if (query["wa"] is String == false) {
         query["wa"] = "";
       }
-      Map decyprt = json.decode(whats_app_crypto.decrypt(
-          data_base64:
-              (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
+      Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
       return WaClientData(decyprt);
     } catch (e) {
       if (query["wa-client"] is String == false) {
         query["wa-client"] = "";
       }
-      Map decyprt = json.decode(whats_app_crypto.decrypt(
-          data_base64:
-              (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
+      Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
       return WaClientData(decyprt);
     }
   }
@@ -185,11 +179,10 @@ class WhatsAppBotApi {
       "owner_tg_user_id": owner_tg_user_id,
       "from_tg_bot_user_id": from_tg_bot_user_id,
     };
-    String? query_telegram_webhook =
-        whats_app_crypto.encryptMapToBase64(data: client_data);
+    String? query_telegram_webhook = whats_app_crypto.encryptMapToBase64(data: client_data);
     Map result_webhook = await request(
-      (isCreateclient) ? "createClient" : "setWebhook",
       parameters: {
+        "@type": (isCreateclient) ? "createClient" : "setWebhook",
         "id": idClient,
         "url": whatsapp_url_webhook.replace(
           path: path,
@@ -239,8 +232,7 @@ class WhatsAppBotApi {
     );
   }
 
-  EventEmitterListener on(String type_update,
-      FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
+  EventEmitterListener on(String type_update, FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
     return event_emitter.on(type_update, null, (Event ev, context) async {
       try {
         if (ev.eventData is UpdateWaBot) {
@@ -257,19 +249,16 @@ class WhatsAppBotApi {
   }
 
   Future<Map> invokeRaw({
-    required String method,
-    required Map? parameters,
-    String? tokenBot,
-    Uri? urlWaBotApi,
-    bool? isInvokeThrowOnError,
-    Client? httpClient,
+    required Map parameters,
+    required String? tokenBot,
+    required Uri? urlWaBotApi,
+    required bool? isInvokeThrowOnError,
+    required Client? httpClient,
   }) async {
     httpClient ??= http_client;
     isInvokeThrowOnError ??= is_invoke_throw_on_error;
     urlWaBotApi ??= url_wa_bot_api;
-    parameters ??= {};
     tokenBot ??= token_bot;
-    parameters["@type"] = method;
     parameters["@token"] = tokenBot;
     String body = json.encode(parameters);
     Response response = await httpClient.post(
@@ -297,16 +286,14 @@ class WhatsAppBotApi {
     return result;
   }
 
-  Future<Map> invoke(
-    String method, {
-    Map? parameters,
+  Future<Map> invoke({
+    required Map parameters,
     String? tokenBot,
     Uri? urlWaBotApi,
     bool? isInvokeThrowOnError,
     Client? httpClient,
   }) async {
     return await invokeRaw(
-      method: method,
       parameters: parameters,
       tokenBot: tokenBot,
       urlWaBotApi: urlWaBotApi,
@@ -315,16 +302,14 @@ class WhatsAppBotApi {
     );
   }
 
-  Future<Map> request(
-    String method, {
-    Map? parameters,
+  Future<Map> request({
+    required Map parameters,
     String? tokenBot,
     Uri? urlWaBotApi,
     bool? isInvokeThrowOnError,
     Client? httpClient,
   }) async {
     return await invoke(
-      method,
       parameters: parameters,
       tokenBot: tokenBot,
       urlWaBotApi: urlWaBotApi,
