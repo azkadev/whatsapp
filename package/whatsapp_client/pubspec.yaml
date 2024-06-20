@@ -1,61 +1,42 @@
-name: whatsapp_client
-description: A Whatsapp Client Library for interact with whatsapp api unnofficial.
-version: 1.0.22
-homepage: https://github.com/azkadev/whatsapp
-repository: https://github.com/azkadev/whatsapp
-issue_tracker: https://github.com/azkadev/whatsapp/issues 
-documentation: https://youtube.com/@azkadev
-funding:
-  - https://github.com/sponsors/azkadev
-  - https://github.com/sponsors/generalfoss
-
-# publish_to: none
-executables:
-  whatsapp_client: whatsapp_client
-  wa_cli: whatsapp_client
-
-platforms:
- android:
- ios:
- linux:
- macos:
- web:
- windows:
-
-topics:
-  - whatsapp
-  - whatsapp-client
-  - whatsapp-bot
-  - whatsapp-api
-
-
-# screenshots:
-#   - description: "Telegram Logo"
-#     path: "assets/telegram.png"
-
-environment:
-  sdk: '>=3.0.0 <4.0.0'
-
-dev_dependencies:
-  lints: ^3.0.0
-  test: ^1.16.0
-
+name: 'whatsapp_client'
+description: 'A Whatsapp Client Library for interact with whatsapp api unnofficial.'
+version: '0.0.0'
+homepage: 'https://github.com/azkadev/whatsapp'
+repository: 'https://github.com/azkadev/whatsapp'
+issue_tracker: 'https://github.com/azkadev/whatsapp/issues'
+documentation: 'https://youtube.com/@azkadev'
+funding: 
+  - 'https://github.com/sponsors/azkadev'
+  - 'https://github.com/sponsors/generalfoss'
+executables: 
+  whatsapp_client: 'whatsapp_client'
+  wa_cli: 'whatsapp_client'
+platforms: 
+  android: null
+  ios: null
+  linux: null
+  macos: null
+  web: null
+  windows: null
+topics: 
+  - 'whatsapp'
+  - 'whatsapp-client'
+  - 'whatsapp-bot'
+  - 'whatsapp-api'
+environment: 
+  sdk: '>=3.3.3 <4.0.0'
+dev_dependencies: 
+  lints: '^3.0.0'
+  test: '^1.16.0'
 dependencies: 
-  general_lib: ^0.0.41
-  packagex: ^0.0.58
-  # path: ^1.9.0
-  http: ^1.1.2
-  mason_logger: ^0.2.15
-  universal_io: ^2.2.2
-  # alfred: ^1.1.1 
-  path: ^1.9.0
-  # universal_io: ^2.2.2 
-  # mason_logger: ^0.2.10
-  mime: ^1.0.5
-  # general_lib: ^0.0.27 
-  # telegram_client: ^0.8.6
-  server_universe: ^0.0.16
-  # server_universe_http_client: ^0.0.1
-
-dependency_overrides:
-  pointycastle: 3.8.0
+  general_lib: '^0.0.42'
+  packagex: '^0.0.58'
+  http: '^1.1.2'
+  mason_logger: '^0.2.15'
+  universal_io: '^2.2.2'
+  path: '^1.9.0'
+  mime: '^1.0.5'
+  server_universe: '^0.0.16'
+dependency_overrides: 
+  pointycastle: '3.8.0'
+publish_to: 'none'
