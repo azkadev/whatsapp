@@ -36,7 +36,7 @@ dependencies:
   universal_io: '^2.2.2'
   path: '^1.9.0'
   mime: '^1.0.5'
-  server_universe: '^0.0.16'
+  server_universe: '^0.0.17'
 dependency_overrides: 
   pointycastle: '3.8.0'
 publish_to: 'none'
