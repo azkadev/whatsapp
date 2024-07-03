@@ -6,3 +6,10 @@
 build/
 *.png 
 whatsapp-bot-api/
+*.exe
+*.deb
+*.sqlite-*
+*.sqlite
+docs/canvaskit
+*/canvaskit
+/build/

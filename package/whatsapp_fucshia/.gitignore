@@ -27,3 +27,10 @@ migrate_working_dir/
 **/doc/api/
 .dart_tool/
 build/
+*.exe
+*.deb
+*.sqlite-*
+*.sqlite
+docs/canvaskit
+*/canvaskit
+/build/

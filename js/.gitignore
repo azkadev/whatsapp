@@ -1,2 +1,10 @@
 whatsapp_client/node_modules/
 whatsapp_client/db/
+*.exe
+*.deb
+*.sqlite-*
+*.sqlite
+docs/canvaskit
+*/canvaskit
+.dart_tool/
+/build/
