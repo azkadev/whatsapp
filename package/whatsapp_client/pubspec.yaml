@@ -1,6 +1,6 @@
 name: 'whatsapp_client'
 description: 'A Whatsapp Client Library for interact with whatsapp api unnofficial.'
-version: '0.0.0'
+version: '1.0.23'
 homepage: 'https://github.com/azkadev/whatsapp'
 repository: 'https://github.com/azkadev/whatsapp'
 issue_tracker: 'https://github.com/azkadev/whatsapp/issues'
@@ -36,7 +36,7 @@ dependencies:
   universal_io: '^2.2.2'
   path: '^1.9.0'
   mime: '^1.0.5'
-  server_universe: '^0.0.17'
+  server_universe: '^0.0.18'
 dependency_overrides: 
   pointycastle: '3.8.0'
-publish_to: 'none'
+# publish_to: 'none'
