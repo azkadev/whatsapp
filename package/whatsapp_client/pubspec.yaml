@@ -29,8 +29,8 @@ dev_dependencies:
   lints: '^3.0.0'
   test: '^1.16.0'
 dependencies: 
-  general_lib: '^0.0.42'
-  packagex: '^0.0.58'
+  general_lib: '^0.0.43'
+  packagex: '^0.0.59'
   http: '^1.1.2'
   mason_logger: '^0.2.15'
   universal_io: '^2.2.2'
