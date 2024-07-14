@@ -12,3 +12,4 @@ pubspec.lock
 docs/canvaskit
 */canvaskit
 /build/
+generate_glx_*

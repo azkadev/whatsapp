@@ -34,3 +34,4 @@ build/
 docs/canvaskit
 */canvaskit
 /build/
+generate_glx_*
