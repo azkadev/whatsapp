@@ -37,9 +37,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:convert';
 
 class WaBotApiScript {
-  String file_name;
-  String script;
-  WaBotApiScript({
+  final String file_name;
+  final String script;
+  const WaBotApiScript({
     required this.file_name,
     required this.script,
   });

@@ -35,8 +35,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'scheme/scheme.dart';
 
 class UpdateWaData {
-  Map rawData;
-  UpdateWaData(this.rawData);
+  final Map rawData;
+  const UpdateWaData(this.rawData);
 
   UpdateAuthorizationState get updateAuthorizationState {
     return UpdateAuthorizationState(rawData);
@@ -48,12 +48,12 @@ class UpdateWaData {
 }
 
 class UpdateWaBot {
-  Map<String, dynamic> body;
-  Map query;
-  String type;
-  Uri uri;
+  final Map<String, dynamic> body;
+  final Map query;
+ final  String type;
+  final Uri uri;
 
-  UpdateWaBot({
+  const UpdateWaBot({
     required this.uri,
     required this.body,
     required this.query,

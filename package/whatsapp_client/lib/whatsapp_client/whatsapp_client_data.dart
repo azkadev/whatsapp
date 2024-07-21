@@ -40,9 +40,9 @@ enum WhatsAppClientType {
 }
 
 class WhatsAppClientData {
-  String whats_app_token_bot;
-  WhatsAppClientType whatsAppClientType;
-  WhatsAppClientData({
+  final String whats_app_token_bot;
+  final WhatsAppClientType whatsAppClientType;
+  const WhatsAppClientData({
     required this.whats_app_token_bot,
     required this.whatsAppClientType,
   });
