@@ -5,7 +5,7 @@ environment:
   sdk: '>=3.3.3 <4.0.0'
 dependencies: 
   general_lib: '^0.0.44'
-  mason_logger: '^0.2.10'
+  mason_logger: '^0.2.15'
   path: '^1.9.0'
   universal_io: '^2.2.2'
 dev_dependencies: 

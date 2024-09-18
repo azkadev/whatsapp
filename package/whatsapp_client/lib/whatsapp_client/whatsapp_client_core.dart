@@ -46,8 +46,8 @@ import 'package:whatsapp_client/whatsapp_client/whatsapp_client_bot_api_option.d
 import 'package:whatsapp_client/whatsapp_client/whatsapp_client_data.dart';
 
 class WhatsAppClient {
-  late final  WhatsAppBotApi whatsAppBotApi;
-   EventEmitter event_emitter = EventEmitter();
+  late final WhatsAppBotApi whatsAppBotApi;
+  EventEmitter event_emitter = EventEmitter();
   final String event_update;
   final String event_invoke;
   final Directory? directory_temp;
@@ -104,31 +104,34 @@ class WhatsAppClient {
     required FutureOr<dynamic> Function(UpdateWhatsAppClient updateWhatsAppClient) onUpdate,
     required FutureOr<dynamic> Function(Object error, StackTrace stackTrace) onError,
   }) {
-    return event_emitter.on(event_name, null, (ev, context) async {
-      try {
-        if (ev.eventData is UpdateWaBot) {
-          final UpdateWaBot updateWaBot = (ev.eventData as UpdateWaBot);
-          final WaClientData waClientData = whatsAppBotApi.waClientData(query: updateWaBot.query);
-          await onUpdate(
-            UpdateWhatsAppClient(
-              uri: updateWaBot.uri,
-              rawData: updateWaBot.body,
-              query: updateWaBot.query,
-              client_option: {},
-              wa: this,
-              whatsappClientData: WhatsAppClientData(
-                whatsAppClientType: WhatsAppClientType.whats_app_bot_api,
-                whats_app_token_bot: waClientData.client_token ?? "",
-              ),
-            ),
-          );
-        }
-      } catch (e, stack) {
+    return event_emitter.on(
+      eventName: event_name,
+
+      onCallback:(_,update) async {
         try {
-          await onError(e, stack);
-        } catch (e) {}
-      }
-    });
+          if (update is UpdateWaBot) { 
+            final WaClientData waClientData = whatsAppBotApi.waClientData(query: update.query);
+            await onUpdate(
+              UpdateWhatsAppClient(
+                uri: update.uri,
+                rawData: update.body,
+                query: update.query,
+                client_option: {},
+                wa: this,
+                whatsappClientData: WhatsAppClientData(
+                  whatsAppClientType: WhatsAppClientType.whats_app_bot_api,
+                  whats_app_token_bot: waClientData.client_token ?? "",
+                ),
+              ),
+            );
+          }
+        } catch (e, stack) {
+          try {
+            await onError(e, stack);
+          } catch (e) {}
+        }
+      },
+    );
   }
 
   /// return original data json
