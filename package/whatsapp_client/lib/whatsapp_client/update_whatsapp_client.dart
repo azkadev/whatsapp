@@ -41,7 +41,7 @@ import 'package:whatsapp_client/whatsapp_client/whatsapp_client_data.dart';
 class UpdateWhatsAppClient {
   final Map rawData;
   final Map query;
-  final  Uri uri;
+  final Uri uri;
   final Map client_option;
 
   final WhatsAppClientData whatsappClientData;
@@ -56,7 +56,8 @@ class UpdateWhatsAppClient {
   });
 
   Map tgClientData() {
-    if (whatsappClientData.whatsAppClientType == WhatsAppClientType.whats_app_bot_api) {
+    if (whatsappClientData.whatsAppClientType ==
+        WhatsAppClientType.whats_app_bot_api) {
       return wa.whatsAppBotApi.waClientData(query: query).rawData;
     }
     return client_option;
@@ -67,7 +68,8 @@ class UpdateWhatsAppClient {
     required bool is_lite,
     required UpdataOptionWhatsAppClient updataOptionWhatsAppClient,
   }) async {
-    if (whatsappClientData.whatsAppClientType == WhatsAppClientType.whats_app_bot_api) {
+    if (whatsappClientData.whatsAppClientType ==
+        WhatsAppClientType.whats_app_bot_api) {
       return rawData;
     }
 

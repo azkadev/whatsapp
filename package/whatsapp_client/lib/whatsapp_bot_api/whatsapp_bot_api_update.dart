@@ -50,7 +50,7 @@ class UpdateWaData {
 class UpdateWaBot {
   final Map<String, dynamic> body;
   final Map query;
- final  String type;
+  final String type;
   final Uri uri;
 
   const UpdateWaBot({

@@ -67,7 +67,8 @@ void main(List<String> args) async {
     onUpdate: (updateWhatsAppClient) {
       Map update = updateWhatsAppClient.rawData;
 
-      WhatsAppClientData whatsAppClientData = updateWhatsAppClient.whatsappClientData;
+      WhatsAppClientData whatsAppClientData =
+          updateWhatsAppClient.whatsappClientData;
       if (update["@type"] == "updateAuthorizationState") {}
     },
     onError: (error, stackTrace) {},
