@@ -7,6 +7,7 @@ issue_tracker: 'https://github.com/azkadev/whatsapp/issues'
 documentation: 'https://youtube.com/@azkadev'
 funding: 
   - 'https://github.com/sponsors/azkadev'
+  - 'https://github.com/sponsors/generalfoss'
 platforms: 
   android: null
   ios: null
@@ -23,7 +24,7 @@ dependencies:
 dev_dependencies: 
   flutter_test: 
     sdk: 'flutter'
-  flutter_lints: '^2.0.0'
+  flutter_lints: '^4.0.0'
 flutter: null
 publish_to: 'none'
 dependency_overrides: 

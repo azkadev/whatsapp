@@ -4,13 +4,13 @@ version: '1.0.23'
 environment: 
   sdk: '>=3.3.3 <4.0.0'
 dependencies: 
-  general_lib: '^0.0.44'
-  mason_logger: '^0.2.15'
+  general_lib: '^0.0.46'
+  mason_logger: '^0.3.1'
   path: '^1.9.0'
   universal_io: '^2.2.2'
 dev_dependencies: 
-  lints: '^2.1.0'
-  test: '^1.24.0'
+  lints: '^4.0.0'
+  test: 'any'
 dependency_overrides: 
   pointycastle: '3.8.0'
 homepage: 'https://github.com/azkadev/whatsapp'
