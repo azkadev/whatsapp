@@ -2,29 +2,30 @@ name: 'whatsapp_documentation'
 description: 'A new Flutter project.'
 publish_to: 'none'
 version: '0.0.0'
-funding: 
+funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
-environment: 
+environment:
   sdk: '>=3.3.3 <4.0.0'
-dependencies: 
-  flutter: 
+dependencies:
+  flutter:
     sdk: 'flutter'
   cupertino_icons: '^1.0.6'
   path: '^1.9.0'
-  general_lib: '^0.0.46'
-  general_lib_flutter: '^0.0.27'
+  general_lib: '^0.0.49'
+  general_lib_flutter: '^0.0.30'
   documentation: '^0.0.2'
-dev_dependencies: 
-  flutter_test: 
+dev_dependencies:
+  flutter_test:
     sdk: 'flutter'
-  flutter_lints: '^4.0.0'
-flutter: 
+  flutter_lints: '^5.0.0'
+flutter:
   uses-material-design: true
-  assets: 
+  assets:
     - 'assets/logo/logo.png'
-dependency_overrides: 
+dependency_overrides:
   pointycastle: '3.8.0'
+  mime: '^2.0.0'
 homepage: 'https://youtube.com/@azkadev'
 repository: 'https://github.com/azkadev/general_framework'
 issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'

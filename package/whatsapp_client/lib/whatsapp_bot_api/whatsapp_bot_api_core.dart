@@ -53,7 +53,7 @@ class WhatsAppBotApi {
   ServerUniverseNative? serverUniverseNative;
   bool is_init_server = false;
   Uri whatsapp_url_webhook = Uri.parse("http://0.0.0.0:8080/wa/webhook");
-  Crypto whats_app_crypto = Crypto(key: "");
+  Crypto whats_app_crypto;
   Client http_client = Client();
 
   EventEmitter event_emitter = EventEmitter();
@@ -66,7 +66,7 @@ class WhatsAppBotApi {
     required String tokenBot,
     Map? clientOption,
     this.serverUniverseNative,
-    String whatsAppCryptoKey = "RfWdLKwNkMQ4BtMb0TXr0bY0vqM7QuYb",
+    Crypto? crypto, 
     EventEmitter? eventEmitter,
     this.event_invoke = "invoke",
     this.event_update = "update",
@@ -74,11 +74,10 @@ class WhatsAppBotApi {
     Client? httpClient,
     Uri? urlWaBotApi,
     bool? isInvokeThrowOnError,
-  }) {
+  }) : whats_app_crypto= crypto ?? Crypto.defaultCrypto() {
     if (httpClient != null) {
       http_client = httpClient;
-    }
-    whats_app_crypto.defaultKey = whatsAppCryptoKey;
+    } 
     if (whatsAppUrlWebhook != null) {
       whatsapp_url_webhook = whatsAppUrlWebhook;
     }
@@ -104,15 +103,13 @@ class WhatsAppBotApi {
         if (is_init_server == false) {
           is_init_server = true;
 
-          serverUniverseNative!.post(whatsapp_url_webhook.path,
-              (HttpRequest req, HttpResponse res) async {
+          serverUniverseNative!.post(whatsapp_url_webhook.path, (HttpRequest req, HttpResponse res) async {
             try {
               Map query = (req.uri.queryParameters).clone();
               Map<String, dynamic> body = ((await req.bodyAsJsonMap));
 
               try {
-                query["wa-client"] =
-                    req.uri.query.replaceAll(RegExp("^(wa=)"), "");
+                query["wa-client"] = req.uri.query.replaceAll(RegExp("^(wa=)"), "");
               } catch (e) {}
 
               event_emitter.emit(
@@ -143,17 +140,13 @@ class WhatsAppBotApi {
       if (query["wa"] is String == false) {
         query["wa"] = "";
       }
-      Map decyprt = json.decode(whats_app_crypto.decrypt(
-          data_base64:
-              (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
+      Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: (query["wa"] as String).replaceAll(RegExp("([ ])"), "")));
       return WaClientData(decyprt);
     } catch (e) {
       if (query["wa-client"] is String == false) {
         query["wa-client"] = "";
       }
-      Map decyprt = json.decode(whats_app_crypto.decrypt(
-          data_base64:
-              (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
+      Map decyprt = json.decode(whats_app_crypto.decrypt(data_base64: (query["wa-client"] as String).replaceAll(RegExp("([ ])"), "")));
       return WaClientData(decyprt);
     }
   }
@@ -184,8 +177,7 @@ class WhatsAppBotApi {
       "owner_tg_user_id": owner_tg_user_id,
       "from_tg_bot_user_id": from_tg_bot_user_id,
     };
-    String? query_telegram_webhook =
-        whats_app_crypto.encryptMapToBase64(data: client_data);
+    String? query_telegram_webhook = whats_app_crypto.encryptMapToBase64(data: client_data);
     Map result_webhook = await request(
       parameters: {
         "@type": (isCreateclient) ? "createClient" : "setWebhook",
@@ -238,8 +230,7 @@ class WhatsAppBotApi {
     );
   }
 
-  EventEmitterListener on(String type_update,
-      FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
+  EventEmitterListener on(String type_update, FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
     return event_emitter.on(
       eventName: type_update,
       onCallback: (_, update) async {

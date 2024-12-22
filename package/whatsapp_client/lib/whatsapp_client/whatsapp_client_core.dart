@@ -84,7 +84,7 @@ class WhatsAppClient {
         tokenBot: whatsAppClientBotApiOption.tokenBot,
         clientOption: whatsAppClientBotApiOption.clientOption,
         serverUniverseNative: whatsAppClientBotApiOption.serverUniverseNative,
-        whatsAppCryptoKey: whatsAppClientBotApiOption.whatsAppCryptoKey,
+        crypto: whatsAppClientBotApiOption.crypto,
         eventEmitter: event_emitter,
         event_invoke: event_invoke,
         event_update: event_update,

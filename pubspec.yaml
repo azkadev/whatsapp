@@ -1,22 +1,23 @@
 name: 'whatsapp_project'
 description: 'A sample command-line application.'
 version: '1.0.23'
-environment: 
+environment:
   sdk: '>=3.3.3 <4.0.0'
-dependencies: 
-  general_lib: '^0.0.46'
+dependencies:
+  general_lib: '^0.0.49'
   mason_logger: '^0.3.1'
   path: '^1.9.0'
   universal_io: '^2.2.2'
-dev_dependencies: 
-  lints: '^4.0.0'
+dev_dependencies:
+  lints: '^5.0.0'
   test: 'any'
-dependency_overrides: 
+dependency_overrides:
   pointycastle: '3.8.0'
+  mime: '^2.0.0'
 homepage: 'https://github.com/azkadev/whatsapp'
 repository: 'https://github.com/azkadev/whatsapp'
 issue_tracker: 'https://github.com/azkadev/whatsapp/issues'
 documentation: 'https://youtube.com/@azkadev'
-funding: 
+funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'

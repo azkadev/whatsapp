@@ -42,7 +42,7 @@ import 'package:whatsapp_client/whatsapp_client/whatsapp_client_data.dart';
 void main(List<String> args) async {
   print("WHATSAPP CLIENT");
   ServerUniverseNative app = ServerUniverseNative(
-    logLevel: LogType.error,
+    serverUniverseLogType: ServerUniverseLogType.error,
   );
 
   WhatsAppBotApiServer whatsAppBotApiServer = WhatsAppBotApiServer();

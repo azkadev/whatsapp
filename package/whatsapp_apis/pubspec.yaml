@@ -5,22 +5,23 @@ homepage: 'https://github.com/azkadev/whatsapp'
 repository: 'https://github.com/azkadev/whatsapp'
 issue_tracker: 'https://github.com/azkadev/whatsapp/issues'
 documentation: 'https://youtube.com/@azkadev'
-funding: 
+funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
-platforms: 
+platforms:
   android: null
   ios: null
   linux: null
   macos: null
   web: null
   windows: null
-environment: 
+environment:
   sdk: '>=3.3.3 <4.0.0'
-dev_dependencies: 
-  lints: '^4.0.0'
+dev_dependencies:
+  lints: '^5.0.0'
   test: 'any'
 publish_to: 'none'
-dependency_overrides: 
+dependency_overrides:
   pointycastle: '3.8.0'
+  mime: '^2.0.0'
 dependencies: {}
