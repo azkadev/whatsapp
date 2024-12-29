@@ -20,3 +20,4 @@ macos/Flutter/ephemeral
 windows/ephemeral
 tmp/
 temp/
+generate_general_private_tools_*

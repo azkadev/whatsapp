@@ -6,14 +6,14 @@ funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: '>=3.6.0 <4.0.0'
 dependencies:
   flutter:
     sdk: 'flutter'
   cupertino_icons: '^1.0.6'
   path: '^1.9.0'
-  general_lib: '^0.0.50'
-  general_lib_flutter: '^0.0.31'
+  general_lib: '^0.0.51'
+  general_lib_flutter: '^0.0.32'
   documentation: '^0.0.2'
 dev_dependencies:
   flutter_test:
