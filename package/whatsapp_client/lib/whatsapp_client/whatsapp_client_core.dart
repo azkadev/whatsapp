@@ -75,7 +75,8 @@ class WhatsAppClient {
     bool is_init_whatsapp_bot_api = true,
     WhatsAppClientBotApiOption? whatsAppClientBotApiOption,
   }) {
-    whatsAppClientBotApiOption ??= WhatsAppClientBotApiOption(tokenBot: "", serverUniverseNative: null);
+    whatsAppClientBotApiOption ??=
+        WhatsAppClientBotApiOption(tokenBot: "", serverUniverseNative: null);
     if (is_init_walib) {}
 
     if (is_init_whatsapp_bot_api) {
@@ -101,15 +102,19 @@ class WhatsAppClient {
   /// return original data json
   EventEmitterListener on({
     required String event_name,
-    required FutureOr<dynamic> Function(UpdateWhatsAppClient updateWhatsAppClient) onUpdate,
-    required FutureOr<dynamic> Function(Object error, StackTrace stackTrace) onError,
+    required FutureOr<dynamic> Function(
+            UpdateWhatsAppClient updateWhatsAppClient)
+        onUpdate,
+    required FutureOr<dynamic> Function(Object error, StackTrace stackTrace)
+        onError,
   }) {
     return event_emitter.on(
       eventName: event_name,
       onCallback: (_, update) async {
         try {
           if (update is UpdateWaBot) {
-            final WaClientData waClientData = whatsAppBotApi.waClientData(query: update.query);
+            final WaClientData waClientData =
+                whatsAppBotApi.waClientData(query: update.query);
             await onUpdate(
               UpdateWhatsAppClient(
                 uri: update.uri,
@@ -151,7 +156,8 @@ class WhatsAppClient {
     required Uri? urlWaBotApi,
     required Client? httpClient,
   }) async {
-    if (whatsAppClientData.whatsAppClientType == WhatsAppClientType.whats_app_bot_api) {
+    if (whatsAppClientData.whatsAppClientType ==
+        WhatsAppClientType.whats_app_bot_api) {
       parameters["@token"] = whatsAppClientData.whats_app_token_bot;
       Map respond = await whatsAppBotApi.request(
         tokenBot: whatsAppClientData.whats_app_token_bot,
@@ -163,7 +169,11 @@ class WhatsAppClient {
       return respond;
     }
 
-    return {"@type": "error", "code": 500, "message": "whatsapp_client_type_not_found"};
+    return {
+      "@type": "error",
+      "code": 500,
+      "message": "whatsapp_client_type_not_found"
+    };
   }
 
   /// return original data json

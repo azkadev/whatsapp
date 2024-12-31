@@ -53,7 +53,8 @@ class WhatsAppBotApiServer {
   Future<void> installBotApiScript({
     required Directory directory_target,
     bool force_install_script = true,
-    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType = WhasAppBotApiScriptLanguageCodeType.js,
+    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType =
+        WhasAppBotApiScriptLanguageCodeType.js,
   }) async {
     return await installBotApiScriptJs(
       directory_target: directory_target,
@@ -71,7 +72,8 @@ class WhatsAppBotApiServer {
     bool is_print = false,
     bool force_install_script = true,
     bool is_delete_script_after_run = true,
-    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType = WhasAppBotApiScriptLanguageCodeType.js,
+    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType =
+        WhasAppBotApiScriptLanguageCodeType.js,
   }) async {
     return await runWaBotApiJs(
       host: host,
@@ -89,7 +91,8 @@ class WhatsAppBotApiServer {
   Future<void> installBotApiScriptJs({
     required Directory directory_target,
     bool force_install_script = true,
-    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType = WhasAppBotApiScriptLanguageCodeType.js,
+    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType =
+        WhasAppBotApiScriptLanguageCodeType.js,
   }) async {
     bool is_not_found_folder = true;
     if (directory_target.existsSync() == false) {
@@ -98,12 +101,14 @@ class WhatsAppBotApiServer {
     } else {
       is_not_found_folder = false;
     }
-    if (!Directory(path.join(directory_target.path, "node_modules")).existsSync()) {
+    if (!Directory(path.join(directory_target.path, "node_modules"))
+        .existsSync()) {
       is_not_found_folder = true;
     }
     bool is_update_node_module = false;
     for (var waBotApiScript in waBotApiScripts) {
-      File file = File(path.join(directory_target.path, waBotApiScript.file_name));
+      File file =
+          File(path.join(directory_target.path, waBotApiScript.file_name));
       if (file.existsSync()) {
         if (waBotApiScript.file_name == "package.json") {
           String data = await file.readAsString();
@@ -174,7 +179,8 @@ class WhatsAppBotApiServer {
     bool is_print = false,
     bool force_install_script = true,
     bool is_delete_script_after_run = true,
-    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType = WhasAppBotApiScriptLanguageCodeType.js,
+    WhasAppBotApiScriptLanguageCodeType whasAppBotApiScriptLanguageCodeType =
+        WhasAppBotApiScriptLanguageCodeType.js,
   }) async {
     workingDirectory ??= path.join(Directory.current.path, "whatsapp-bot-api");
 
@@ -254,7 +260,8 @@ class WhatsAppBotApiServer {
               wa_bot_api_port: wa_bot_api_port,
               app_name: app_name,
               workingDirectory: workingDirectory,
-              whasAppBotApiScriptLanguageCodeType: whasAppBotApiScriptLanguageCodeType,
+              whasAppBotApiScriptLanguageCodeType:
+                  whasAppBotApiScriptLanguageCodeType,
               is_delete_script_after_run: is_delete_script_after_run,
               is_print: is_print,
               database_directory: database_directory,
