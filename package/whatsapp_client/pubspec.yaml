@@ -33,7 +33,7 @@ dependencies:
   packagex: '^0.0.66'
   http: '^1.2.2'
   mason_logger: '^0.3.1'
-  universal_io: '^2.2.2'
+  io_universe: '^0.0.2'
   path: '^1.9.0'
   mime: '^2.0.0'
   server_universe: '^0.0.27'
