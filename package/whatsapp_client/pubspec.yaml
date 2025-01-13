@@ -29,14 +29,14 @@ dev_dependencies:
   lints: '^5.0.0'
   test: 'any'
 dependencies:
-  general_lib: '^0.0.56'
-  packagex: '^0.0.70'
+  general_lib: '^0.0.59'
+  packagex: '^0.0.83'
   http: '^1.2.2'
   mason_logger: '^0.3.1'
   io_universe: '^0.0.4'
   path: '^1.9.0'
   mime: '^2.0.0'
-  server_universe: '^0.0.31'
+  server_universe: '^0.0.32'
 dependency_overrides:
   pointycastle: '3.8.0'
   mime: '^2.0.0'
