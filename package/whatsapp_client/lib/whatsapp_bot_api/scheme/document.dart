@@ -4,20 +4,38 @@ import "package:general_lib/general_lib.dart";
 
 import "context_info.dart";
 
-/// Generated 
+/// Generated
 class Document extends JsonScheme {
-
   /// Generated
   Document(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"document","url":"","mimetype":"image/jpeg","title":"0.jpeg","fileSha256":"=","fileLength":"79735","pageCount":0,"mediaKey":"","fileName":"0.jpeg","fileEncSha256":"","directPath":"","mediaKeyTimestamp":"","contextInfo":{"@type":"contextInfo","expiration":0,"ephemeralSettingTimestamp":"","disappearingMode":{"initiator":"INITIATED_BY_ME"}}};
+    return {
+      "@type": "document",
+      "url": "",
+      "mimetype": "image/jpeg",
+      "title": "0.jpeg",
+      "fileSha256": "=",
+      "fileLength": "79735",
+      "pageCount": 0,
+      "mediaKey": "",
+      "fileName": "0.jpeg",
+      "fileEncSha256": "",
+      "directPath": "",
+      "mediaKeyTimestamp": "",
+      "contextInfo": {
+        "@type": "contextInfo",
+        "expiration": 0,
+        "ephemeralSettingTimestamp": "",
+        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
+      }
+    };
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == document
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -31,20 +49,16 @@ class Document extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [Document]
-  /// Empty  
+  /// Empty
   static Document empty() {
     return Document({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -58,11 +72,10 @@ class Document extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -76,11 +89,10 @@ class Document extends JsonScheme {
     rawData["url"] = value;
   }
 
-
   /// Generated
   String? get mimetype {
     try {
-      if (rawData["mimetype"] is String == false){
+      if (rawData["mimetype"] is String == false) {
         return null;
       }
       return rawData["mimetype"] as String;
@@ -94,11 +106,10 @@ class Document extends JsonScheme {
     rawData["mimetype"] = value;
   }
 
-
   /// Generated
   String? get title {
     try {
-      if (rawData["title"] is String == false){
+      if (rawData["title"] is String == false) {
         return null;
       }
       return rawData["title"] as String;
@@ -112,11 +123,10 @@ class Document extends JsonScheme {
     rawData["title"] = value;
   }
 
-
   /// Generated
   String? get filesha256 {
     try {
-      if (rawData["fileSha256"] is String == false){
+      if (rawData["fileSha256"] is String == false) {
         return null;
       }
       return rawData["fileSha256"] as String;
@@ -130,11 +140,10 @@ class Document extends JsonScheme {
     rawData["fileSha256"] = value;
   }
 
-
   /// Generated
   String? get filelength {
     try {
-      if (rawData["fileLength"] is String == false){
+      if (rawData["fileLength"] is String == false) {
         return null;
       }
       return rawData["fileLength"] as String;
@@ -148,11 +157,10 @@ class Document extends JsonScheme {
     rawData["fileLength"] = value;
   }
 
-
   /// Generated
   num? get pagecount {
     try {
-      if (rawData["pageCount"] is num == false){
+      if (rawData["pageCount"] is num == false) {
         return null;
       }
       return rawData["pageCount"] as num;
@@ -166,11 +174,10 @@ class Document extends JsonScheme {
     rawData["pageCount"] = value;
   }
 
-
   /// Generated
   String? get mediakey {
     try {
-      if (rawData["mediaKey"] is String == false){
+      if (rawData["mediaKey"] is String == false) {
         return null;
       }
       return rawData["mediaKey"] as String;
@@ -184,11 +191,10 @@ class Document extends JsonScheme {
     rawData["mediaKey"] = value;
   }
 
-
   /// Generated
   String? get filename {
     try {
-      if (rawData["fileName"] is String == false){
+      if (rawData["fileName"] is String == false) {
         return null;
       }
       return rawData["fileName"] as String;
@@ -202,11 +208,10 @@ class Document extends JsonScheme {
     rawData["fileName"] = value;
   }
 
-
   /// Generated
   String? get fileencsha256 {
     try {
-      if (rawData["fileEncSha256"] is String == false){
+      if (rawData["fileEncSha256"] is String == false) {
         return null;
       }
       return rawData["fileEncSha256"] as String;
@@ -220,11 +225,10 @@ class Document extends JsonScheme {
     rawData["fileEncSha256"] = value;
   }
 
-
   /// Generated
   String? get directpath {
     try {
-      if (rawData["directPath"] is String == false){
+      if (rawData["directPath"] is String == false) {
         return null;
       }
       return rawData["directPath"] as String;
@@ -238,11 +242,10 @@ class Document extends JsonScheme {
     rawData["directPath"] = value;
   }
 
-
   /// Generated
   String? get mediakeytimestamp {
     try {
-      if (rawData["mediaKeyTimestamp"] is String == false){
+      if (rawData["mediaKeyTimestamp"] is String == false) {
         return null;
       }
       return rawData["mediaKeyTimestamp"] as String;
@@ -256,31 +259,26 @@ class Document extends JsonScheme {
     rawData["mediaKeyTimestamp"] = value;
   }
 
-
   /// Generated
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false){
-        return ContextInfo({}); 
+      if (rawData["contextInfo"] is Map == false) {
+        return ContextInfo({});
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {  
-      return ContextInfo({}); 
+    } catch (e) {
+      return ContextInfo({});
     }
   }
-
 
   /// Generated
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
-
-
   /// Generated
   static Document create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "document",
     String? url,
     String? mimetype,
@@ -293,11 +291,10 @@ class Document extends JsonScheme {
     String? fileencsha256,
     String? directpath,
     String? mediakeytimestamp,
-      ContextInfo? contextinfo,
-})  {
+    ContextInfo? contextinfo,
+  }) {
     // Document document = Document({
-final Map document_data_create_json = {
-  
+    final Map document_data_create_json = {
       "@type": special_type,
       "url": url,
       "mimetype": mimetype,
@@ -310,13 +307,10 @@ final Map document_data_create_json = {
       "fileEncSha256": fileencsha256,
       "directPath": directpath,
       "mediaKeyTimestamp": mediakeytimestamp,
-      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
+      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
+    };
 
-
-};
-
-
-          document_data_create_json.removeWhere((key, value) => value == null);
+    document_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -325,8 +319,6 @@ final Map document_data_create_json = {
         }
       });
     }
-return Document(document_data_create_json);
-
-
-      }
+    return Document(document_data_create_json);
+  }
 }

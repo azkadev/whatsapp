@@ -34,32 +34,41 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'scheme/scheme.dart';
 
-/// 
+///
 class UpdateWaData {
-  /// 
+  ///
   final Map rawData;
-  /// 
+
+  ///
   const UpdateWaData(this.rawData);
-/// 
+
+  ///
   UpdateAuthorizationState get updateAuthorizationState {
     return UpdateAuthorizationState(rawData);
-  }/// 
+  }
+
+  ///
 
   UpdateNewMessage get updateNewMessage {
     return UpdateNewMessage(rawData);
   }
 }
-/// 
+
+///
 class UpdateWaBot {
-  /// 
+  ///
   final Map<String, dynamic> body;
-  /// 
+
+  ///
   final Map query;
-  /// 
+
+  ///
   final String type;
-  /// 
+
+  ///
   final Uri uri;
-/// 
+
+  ///
   const UpdateWaBot({
     required this.uri,
     required this.body,

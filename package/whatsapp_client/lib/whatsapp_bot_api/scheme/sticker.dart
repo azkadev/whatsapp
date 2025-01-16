@@ -4,20 +4,40 @@ import "package:general_lib/general_lib.dart";
 
 import "context_info.dart";
 
-/// Generated 
+/// Generated
 class Sticker extends JsonScheme {
-
   /// Generated
   Sticker(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"sticker","url":"","fileSha256":"","fileEncSha256":"","mediaKey":"","mimetype":"","height":0,"width":0,"directPath":"","fileLength":"","mediaKeyTimestamp":"","isAnimated":false,"contextInfo":{"@type":"contextInfo","expiration":0,"ephemeralSettingTimestamp":"","disappearingMode":{"initiator":"INITIATED_BY_ME"}},"stickerSentTs":"1686254514962","isAvatar":false};
+    return {
+      "@type": "sticker",
+      "url": "",
+      "fileSha256": "",
+      "fileEncSha256": "",
+      "mediaKey": "",
+      "mimetype": "",
+      "height": 0,
+      "width": 0,
+      "directPath": "",
+      "fileLength": "",
+      "mediaKeyTimestamp": "",
+      "isAnimated": false,
+      "contextInfo": {
+        "@type": "contextInfo",
+        "expiration": 0,
+        "ephemeralSettingTimestamp": "",
+        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
+      },
+      "stickerSentTs": "1686254514962",
+      "isAvatar": false
+    };
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == sticker
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -31,20 +51,16 @@ class Sticker extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [Sticker]
-  /// Empty  
+  /// Empty
   static Sticker empty() {
     return Sticker({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -58,11 +74,10 @@ class Sticker extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -76,11 +91,10 @@ class Sticker extends JsonScheme {
     rawData["url"] = value;
   }
 
-
   /// Generated
   String? get filesha256 {
     try {
-      if (rawData["fileSha256"] is String == false){
+      if (rawData["fileSha256"] is String == false) {
         return null;
       }
       return rawData["fileSha256"] as String;
@@ -94,11 +108,10 @@ class Sticker extends JsonScheme {
     rawData["fileSha256"] = value;
   }
 
-
   /// Generated
   String? get fileencsha256 {
     try {
-      if (rawData["fileEncSha256"] is String == false){
+      if (rawData["fileEncSha256"] is String == false) {
         return null;
       }
       return rawData["fileEncSha256"] as String;
@@ -112,11 +125,10 @@ class Sticker extends JsonScheme {
     rawData["fileEncSha256"] = value;
   }
 
-
   /// Generated
   String? get mediakey {
     try {
-      if (rawData["mediaKey"] is String == false){
+      if (rawData["mediaKey"] is String == false) {
         return null;
       }
       return rawData["mediaKey"] as String;
@@ -130,11 +142,10 @@ class Sticker extends JsonScheme {
     rawData["mediaKey"] = value;
   }
 
-
   /// Generated
   String? get mimetype {
     try {
-      if (rawData["mimetype"] is String == false){
+      if (rawData["mimetype"] is String == false) {
         return null;
       }
       return rawData["mimetype"] as String;
@@ -148,11 +159,10 @@ class Sticker extends JsonScheme {
     rawData["mimetype"] = value;
   }
 
-
   /// Generated
   num? get height {
     try {
-      if (rawData["height"] is num == false){
+      if (rawData["height"] is num == false) {
         return null;
       }
       return rawData["height"] as num;
@@ -166,11 +176,10 @@ class Sticker extends JsonScheme {
     rawData["height"] = value;
   }
 
-
   /// Generated
   num? get width {
     try {
-      if (rawData["width"] is num == false){
+      if (rawData["width"] is num == false) {
         return null;
       }
       return rawData["width"] as num;
@@ -184,11 +193,10 @@ class Sticker extends JsonScheme {
     rawData["width"] = value;
   }
 
-
   /// Generated
   String? get directpath {
     try {
-      if (rawData["directPath"] is String == false){
+      if (rawData["directPath"] is String == false) {
         return null;
       }
       return rawData["directPath"] as String;
@@ -202,11 +210,10 @@ class Sticker extends JsonScheme {
     rawData["directPath"] = value;
   }
 
-
   /// Generated
   String? get filelength {
     try {
-      if (rawData["fileLength"] is String == false){
+      if (rawData["fileLength"] is String == false) {
         return null;
       }
       return rawData["fileLength"] as String;
@@ -220,11 +227,10 @@ class Sticker extends JsonScheme {
     rawData["fileLength"] = value;
   }
 
-
   /// Generated
   String? get mediakeytimestamp {
     try {
-      if (rawData["mediaKeyTimestamp"] is String == false){
+      if (rawData["mediaKeyTimestamp"] is String == false) {
         return null;
       }
       return rawData["mediaKeyTimestamp"] as String;
@@ -238,11 +244,10 @@ class Sticker extends JsonScheme {
     rawData["mediaKeyTimestamp"] = value;
   }
 
-
   /// Generated
   bool? get isanimated {
     try {
-      if (rawData["isAnimated"] is bool == false){
+      if (rawData["isAnimated"] is bool == false) {
         return null;
       }
       return rawData["isAnimated"] as bool;
@@ -256,31 +261,27 @@ class Sticker extends JsonScheme {
     rawData["isAnimated"] = value;
   }
 
-
   /// Generated
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false){
-        return ContextInfo({}); 
+      if (rawData["contextInfo"] is Map == false) {
+        return ContextInfo({});
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {  
-      return ContextInfo({}); 
+    } catch (e) {
+      return ContextInfo({});
     }
   }
-
 
   /// Generated
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
-
-
   /// Generated
   String? get stickersentts {
     try {
-      if (rawData["stickerSentTs"] is String == false){
+      if (rawData["stickerSentTs"] is String == false) {
         return null;
       }
       return rawData["stickerSentTs"] as String;
@@ -294,11 +295,10 @@ class Sticker extends JsonScheme {
     rawData["stickerSentTs"] = value;
   }
 
-
   /// Generated
   bool? get isavatar {
     try {
-      if (rawData["isAvatar"] is bool == false){
+      if (rawData["isAvatar"] is bool == false) {
         return null;
       }
       return rawData["isAvatar"] as bool;
@@ -312,11 +312,9 @@ class Sticker extends JsonScheme {
     rawData["isAvatar"] = value;
   }
 
-
   /// Generated
   static Sticker create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "sticker",
     String? url,
     String? filesha256,
@@ -329,13 +327,12 @@ class Sticker extends JsonScheme {
     String? filelength,
     String? mediakeytimestamp,
     bool? isanimated,
-      ContextInfo? contextinfo,
+    ContextInfo? contextinfo,
     String? stickersentts,
     bool? isavatar,
-})  {
+  }) {
     // Sticker sticker = Sticker({
-final Map sticker_data_create_json = {
-  
+    final Map sticker_data_create_json = {
       "@type": special_type,
       "url": url,
       "fileSha256": filesha256,
@@ -348,15 +345,12 @@ final Map sticker_data_create_json = {
       "fileLength": filelength,
       "mediaKeyTimestamp": mediakeytimestamp,
       "isAnimated": isanimated,
-      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
+      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
       "stickerSentTs": stickersentts,
       "isAvatar": isavatar,
+    };
 
-
-};
-
-
-          sticker_data_create_json.removeWhere((key, value) => value == null);
+    sticker_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -365,8 +359,6 @@ final Map sticker_data_create_json = {
         }
       });
     }
-return Sticker(sticker_data_create_json);
-
-
-      }
+    return Sticker(sticker_data_create_json);
+  }
 }

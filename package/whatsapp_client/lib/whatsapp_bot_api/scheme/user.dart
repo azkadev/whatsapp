@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class User extends JsonScheme {
-
   /// Generated
   User(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"user","id":"0","first_name":"Ttt","type":"private"};
+    return {"@type": "user", "id": "0", "first_name": "Ttt", "type": "private"};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == user
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class User extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [User]
-  /// Empty  
+  /// Empty
   static User empty() {
     return User({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class User extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get id {
     try {
-      if (rawData["id"] is String == false){
+      if (rawData["id"] is String == false) {
         return null;
       }
       return rawData["id"] as String;
@@ -75,11 +68,10 @@ class User extends JsonScheme {
     rawData["id"] = value;
   }
 
-
   /// Generated
   String? get first_name {
     try {
-      if (rawData["first_name"] is String == false){
+      if (rawData["first_name"] is String == false) {
         return null;
       }
       return rawData["first_name"] as String;
@@ -93,11 +85,10 @@ class User extends JsonScheme {
     rawData["first_name"] = value;
   }
 
-
   /// Generated
   String? get type {
     try {
-      if (rawData["type"] is String == false){
+      if (rawData["type"] is String == false) {
         return null;
       }
       return rawData["type"] as String;
@@ -111,29 +102,23 @@ class User extends JsonScheme {
     rawData["type"] = value;
   }
 
-
   /// Generated
   static User create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "user",
     String? id,
     String? first_name,
     String? type,
-})  {
+  }) {
     // User user = User({
-final Map user_data_create_json = {
-  
+    final Map user_data_create_json = {
       "@type": special_type,
       "id": id,
       "first_name": first_name,
       "type": type,
+    };
 
-
-};
-
-
-          user_data_create_json.removeWhere((key, value) => value == null);
+    user_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -142,8 +127,6 @@ final Map user_data_create_json = {
         }
       });
     }
-return User(user_data_create_json);
-
-
-      }
+    return User(user_data_create_json);
+  }
 }

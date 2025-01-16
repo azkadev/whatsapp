@@ -4,20 +4,27 @@ import "package:general_lib/general_lib.dart";
 
 import "disappearing_mode.dart";
 
-/// Generated 
+/// Generated
 class ContextInfo extends JsonScheme {
-
   /// Generated
   ContextInfo(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"contextInfo","expiration":604800,"ephemeralSettingTimestamp":"1675329","disappearingMode":{"@type":"disappearingMode","initiator":"INITIATED_BY_ME"}};
+    return {
+      "@type": "contextInfo",
+      "expiration": 604800,
+      "ephemeralSettingTimestamp": "1675329",
+      "disappearingMode": {
+        "@type": "disappearingMode",
+        "initiator": "INITIATED_BY_ME"
+      }
+    };
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == contextInfo
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -31,20 +38,16 @@ class ContextInfo extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [ContextInfo]
-  /// Empty  
+  /// Empty
   static ContextInfo empty() {
     return ContextInfo({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -58,11 +61,10 @@ class ContextInfo extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   num? get expiration {
     try {
-      if (rawData["expiration"] is num == false){
+      if (rawData["expiration"] is num == false) {
         return null;
       }
       return rawData["expiration"] as num;
@@ -76,11 +78,10 @@ class ContextInfo extends JsonScheme {
     rawData["expiration"] = value;
   }
 
-
   /// Generated
   String? get ephemeralsettingtimestamp {
     try {
-      if (rawData["ephemeralSettingTimestamp"] is String == false){
+      if (rawData["ephemeralSettingTimestamp"] is String == false) {
         return null;
       }
       return rawData["ephemeralSettingTimestamp"] as String;
@@ -94,49 +95,41 @@ class ContextInfo extends JsonScheme {
     rawData["ephemeralSettingTimestamp"] = value;
   }
 
-
   /// Generated
   DisappearingMode get disappearingmode {
     try {
-      if (rawData["disappearingMode"] is Map == false){
-        return DisappearingMode({}); 
+      if (rawData["disappearingMode"] is Map == false) {
+        return DisappearingMode({});
       }
       return DisappearingMode(rawData["disappearingMode"] as Map);
-    } catch (e) {  
-      return DisappearingMode({}); 
+    } catch (e) {
+      return DisappearingMode({});
     }
   }
-
 
   /// Generated
   set disappearingmode(DisappearingMode value) {
     rawData["disappearingMode"] = value.toJson();
   }
 
-
-
   /// Generated
   static ContextInfo create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "contextInfo",
     num? expiration,
     String? ephemeralsettingtimestamp,
-      DisappearingMode? disappearingmode,
-})  {
+    DisappearingMode? disappearingmode,
+  }) {
     // ContextInfo contextInfo = ContextInfo({
-final Map contextInfo_data_create_json = {
-  
+    final Map contextInfo_data_create_json = {
       "@type": special_type,
       "expiration": expiration,
       "ephemeralSettingTimestamp": ephemeralsettingtimestamp,
-      "disappearingMode": (disappearingmode != null)?disappearingmode.toJson(): null,
+      "disappearingMode":
+          (disappearingmode != null) ? disappearingmode.toJson() : null,
+    };
 
-
-};
-
-
-          contextInfo_data_create_json.removeWhere((key, value) => value == null);
+    contextInfo_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -145,8 +138,6 @@ final Map contextInfo_data_create_json = {
         }
       });
     }
-return ContextInfo(contextInfo_data_create_json);
-
-
-      }
+    return ContextInfo(contextInfo_data_create_json);
+  }
 }

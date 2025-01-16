@@ -35,20 +35,23 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 // ignore_for_file: non_constant_identifier_names, depend_on_referenced_packages
 
 import 'dart:convert';
-/// 
+
+///
 class WaBotApiScript {
-  
-  /// 
+  ///
   final String file_name;
-  /// 
+
+  ///
   final String script;
-  /// 
+
+  ///
   const WaBotApiScript({
     required this.file_name,
     required this.script,
   });
 }
-/// 
+
+///
 List<WaBotApiScript> waBotApiScripts = [
   WaBotApiScript(file_name: ".gitignore", script: r"""
 *

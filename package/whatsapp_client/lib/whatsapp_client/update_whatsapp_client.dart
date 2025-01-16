@@ -39,19 +39,25 @@ import 'package:whatsapp_client/whatsapp_client/whatsapp_client_data.dart';
 
 /// update telegram data
 class UpdateWhatsAppClient {
-  /// 
+  ///
   final Map rawData;
-  /// 
+
+  ///
   final Map query;
-  /// 
+
+  ///
   final Uri uri;
-  /// 
+
+  ///
   final Map client_option;
-/// 
+
+  ///
   final WhatsAppClientData whatsappClientData;
-  /// 
+
+  ///
   final WhatsAppClient wa;
-  /// 
+
+  ///
   const UpdateWhatsAppClient({
     required this.rawData,
     required this.uri,
@@ -60,7 +66,8 @@ class UpdateWhatsAppClient {
     required this.whatsappClientData,
     required this.wa,
   });
-/// 
+
+  ///
   Map tgClientData() {
     if (whatsappClientData.whatsAppClientType ==
         WhatsAppClientType.whats_app_bot_api) {
@@ -103,26 +110,32 @@ class UpdateWhatsAppClient {
   }
 }
 
-/// 
+///
 class UpdataOptionWhatsAppClient {
-  /// 
+  ///
   final UpdataMessageWhatsAppClient updataMessageWhatsAppClient;
-  /// 
+
+  ///
   UpdataOptionWhatsAppClient({
     required this.updataMessageWhatsAppClient,
   });
 }
-/// 
+
+///
 class UpdataMessageWhatsAppClient {
-  /// 
+  ///
   final bool bot_is_skip_old_message;
-  /// 
+
+  ///
   final bool user_is_skip_old_message;
-  /// 
+
+  ///
   late final Duration duration_old_message_skip;
-  /// 
+
+  ///
   late final List<String> skip_old_chat_types;
-  /// 
+
+  ///
   UpdataMessageWhatsAppClient({
     this.bot_is_skip_old_message = false,
     this.user_is_skip_old_message = true,

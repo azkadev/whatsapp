@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class DisappearingMode extends JsonScheme {
-
   /// Generated
   DisappearingMode(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"disappearingMode","initiator":"INITIATED_BY_ME"};
+    return {"@type": "disappearingMode", "initiator": "INITIATED_BY_ME"};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == disappearingMode
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class DisappearingMode extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [DisappearingMode]
-  /// Empty  
+  /// Empty
   static DisappearingMode empty() {
     return DisappearingMode({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class DisappearingMode extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get initiator {
     try {
-      if (rawData["initiator"] is String == false){
+      if (rawData["initiator"] is String == false) {
         return null;
       }
       return rawData["initiator"] as String;
@@ -75,25 +68,20 @@ class DisappearingMode extends JsonScheme {
     rawData["initiator"] = value;
   }
 
-
   /// Generated
   static DisappearingMode create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "disappearingMode",
     String? initiator,
-})  {
+  }) {
     // DisappearingMode disappearingMode = DisappearingMode({
-final Map disappearingMode_data_create_json = {
-  
+    final Map disappearingMode_data_create_json = {
       "@type": special_type,
       "initiator": initiator,
+    };
 
-
-};
-
-
-          disappearingMode_data_create_json.removeWhere((key, value) => value == null);
+    disappearingMode_data_create_json
+        .removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -102,8 +90,6 @@ final Map disappearingMode_data_create_json = {
         }
       });
     }
-return DisappearingMode(disappearingMode_data_create_json);
-
-
-      }
+    return DisappearingMode(disappearingMode_data_create_json);
+  }
 }

@@ -4,20 +4,29 @@ import "package:general_lib/general_lib.dart";
 
 import "context_info.dart";
 
-/// Generated 
+/// Generated
 class Contact extends JsonScheme {
-
   /// Generated
   Contact(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"contact","displayName":"","vcard":"","contextInfo":{"@type":"contextInfo","expiration":604800,"ephemeralSettingTimestamp":"1675329","disappearingMode":{"initiator":"INITIATED_BY_ME"}}};
+    return {
+      "@type": "contact",
+      "displayName": "",
+      "vcard": "",
+      "contextInfo": {
+        "@type": "contextInfo",
+        "expiration": 604800,
+        "ephemeralSettingTimestamp": "1675329",
+        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
+      }
+    };
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == contact
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -31,20 +40,16 @@ class Contact extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [Contact]
-  /// Empty  
+  /// Empty
   static Contact empty() {
     return Contact({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -58,11 +63,10 @@ class Contact extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get displayname {
     try {
-      if (rawData["displayName"] is String == false){
+      if (rawData["displayName"] is String == false) {
         return null;
       }
       return rawData["displayName"] as String;
@@ -76,11 +80,10 @@ class Contact extends JsonScheme {
     rawData["displayName"] = value;
   }
 
-
   /// Generated
   String? get vcard {
     try {
-      if (rawData["vcard"] is String == false){
+      if (rawData["vcard"] is String == false) {
         return null;
       }
       return rawData["vcard"] as String;
@@ -94,49 +97,40 @@ class Contact extends JsonScheme {
     rawData["vcard"] = value;
   }
 
-
   /// Generated
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false){
-        return ContextInfo({}); 
+      if (rawData["contextInfo"] is Map == false) {
+        return ContextInfo({});
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {  
-      return ContextInfo({}); 
+    } catch (e) {
+      return ContextInfo({});
     }
   }
-
 
   /// Generated
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
-
-
   /// Generated
   static Contact create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "contact",
     String? displayname,
     String? vcard,
-      ContextInfo? contextinfo,
-})  {
+    ContextInfo? contextinfo,
+  }) {
     // Contact contact = Contact({
-final Map contact_data_create_json = {
-  
+    final Map contact_data_create_json = {
       "@type": special_type,
       "displayName": displayname,
       "vcard": vcard,
-      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
+      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
+    };
 
-
-};
-
-
-          contact_data_create_json.removeWhere((key, value) => value == null);
+    contact_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -145,8 +139,6 @@ final Map contact_data_create_json = {
         }
       });
     }
-return Contact(contact_data_create_json);
-
-
-      }
+    return Contact(contact_data_create_json);
+  }
 }

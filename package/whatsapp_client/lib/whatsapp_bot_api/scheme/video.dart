@@ -4,20 +4,40 @@ import "package:general_lib/general_lib.dart";
 
 import "context_info.dart";
 
-/// Generated 
+/// Generated
 class Video extends JsonScheme {
-
   /// Generated
   Video(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"video","url":"","mimetype":"video/mp4","fileSha256":"iU/=","fileLength":"109192","seconds":1,"mediaKey":"=","height":960,"width":720,"fileEncSha256":"riTIeO+UouBo/=","directPath":"/v","mediaKeyTimestamp":"1686254486","jpegThumbnail":"/","contextInfo":{"@type":"contextInfo","expiration":604800,"ephemeralSettingTimestamp":"1675329","disappearingMode":{"initiator":"INITIATED_BY_ME"}},"streamingSidecar":""};
+    return {
+      "@type": "video",
+      "url": "",
+      "mimetype": "video/mp4",
+      "fileSha256": "iU/=",
+      "fileLength": "109192",
+      "seconds": 1,
+      "mediaKey": "=",
+      "height": 960,
+      "width": 720,
+      "fileEncSha256": "riTIeO+UouBo/=",
+      "directPath": "/v",
+      "mediaKeyTimestamp": "1686254486",
+      "jpegThumbnail": "/",
+      "contextInfo": {
+        "@type": "contextInfo",
+        "expiration": 604800,
+        "ephemeralSettingTimestamp": "1675329",
+        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
+      },
+      "streamingSidecar": ""
+    };
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == video
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -31,20 +51,16 @@ class Video extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [Video]
-  /// Empty  
+  /// Empty
   static Video empty() {
     return Video({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -58,11 +74,10 @@ class Video extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get url {
     try {
-      if (rawData["url"] is String == false){
+      if (rawData["url"] is String == false) {
         return null;
       }
       return rawData["url"] as String;
@@ -76,11 +91,10 @@ class Video extends JsonScheme {
     rawData["url"] = value;
   }
 
-
   /// Generated
   String? get mimetype {
     try {
-      if (rawData["mimetype"] is String == false){
+      if (rawData["mimetype"] is String == false) {
         return null;
       }
       return rawData["mimetype"] as String;
@@ -94,11 +108,10 @@ class Video extends JsonScheme {
     rawData["mimetype"] = value;
   }
 
-
   /// Generated
   String? get filesha256 {
     try {
-      if (rawData["fileSha256"] is String == false){
+      if (rawData["fileSha256"] is String == false) {
         return null;
       }
       return rawData["fileSha256"] as String;
@@ -112,11 +125,10 @@ class Video extends JsonScheme {
     rawData["fileSha256"] = value;
   }
 
-
   /// Generated
   String? get filelength {
     try {
-      if (rawData["fileLength"] is String == false){
+      if (rawData["fileLength"] is String == false) {
         return null;
       }
       return rawData["fileLength"] as String;
@@ -130,11 +142,10 @@ class Video extends JsonScheme {
     rawData["fileLength"] = value;
   }
 
-
   /// Generated
   num? get seconds {
     try {
-      if (rawData["seconds"] is num == false){
+      if (rawData["seconds"] is num == false) {
         return null;
       }
       return rawData["seconds"] as num;
@@ -148,11 +159,10 @@ class Video extends JsonScheme {
     rawData["seconds"] = value;
   }
 
-
   /// Generated
   String? get mediakey {
     try {
-      if (rawData["mediaKey"] is String == false){
+      if (rawData["mediaKey"] is String == false) {
         return null;
       }
       return rawData["mediaKey"] as String;
@@ -166,11 +176,10 @@ class Video extends JsonScheme {
     rawData["mediaKey"] = value;
   }
 
-
   /// Generated
   num? get height {
     try {
-      if (rawData["height"] is num == false){
+      if (rawData["height"] is num == false) {
         return null;
       }
       return rawData["height"] as num;
@@ -184,11 +193,10 @@ class Video extends JsonScheme {
     rawData["height"] = value;
   }
 
-
   /// Generated
   num? get width {
     try {
-      if (rawData["width"] is num == false){
+      if (rawData["width"] is num == false) {
         return null;
       }
       return rawData["width"] as num;
@@ -202,11 +210,10 @@ class Video extends JsonScheme {
     rawData["width"] = value;
   }
 
-
   /// Generated
   String? get fileencsha256 {
     try {
-      if (rawData["fileEncSha256"] is String == false){
+      if (rawData["fileEncSha256"] is String == false) {
         return null;
       }
       return rawData["fileEncSha256"] as String;
@@ -220,11 +227,10 @@ class Video extends JsonScheme {
     rawData["fileEncSha256"] = value;
   }
 
-
   /// Generated
   String? get directpath {
     try {
-      if (rawData["directPath"] is String == false){
+      if (rawData["directPath"] is String == false) {
         return null;
       }
       return rawData["directPath"] as String;
@@ -238,11 +244,10 @@ class Video extends JsonScheme {
     rawData["directPath"] = value;
   }
 
-
   /// Generated
   String? get mediakeytimestamp {
     try {
-      if (rawData["mediaKeyTimestamp"] is String == false){
+      if (rawData["mediaKeyTimestamp"] is String == false) {
         return null;
       }
       return rawData["mediaKeyTimestamp"] as String;
@@ -256,11 +261,10 @@ class Video extends JsonScheme {
     rawData["mediaKeyTimestamp"] = value;
   }
 
-
   /// Generated
   String? get jpegthumbnail {
     try {
-      if (rawData["jpegThumbnail"] is String == false){
+      if (rawData["jpegThumbnail"] is String == false) {
         return null;
       }
       return rawData["jpegThumbnail"] as String;
@@ -274,31 +278,27 @@ class Video extends JsonScheme {
     rawData["jpegThumbnail"] = value;
   }
 
-
   /// Generated
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false){
-        return ContextInfo({}); 
+      if (rawData["contextInfo"] is Map == false) {
+        return ContextInfo({});
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {  
-      return ContextInfo({}); 
+    } catch (e) {
+      return ContextInfo({});
     }
   }
-
 
   /// Generated
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
-
-
   /// Generated
   String? get streamingsidecar {
     try {
-      if (rawData["streamingSidecar"] is String == false){
+      if (rawData["streamingSidecar"] is String == false) {
         return null;
       }
       return rawData["streamingSidecar"] as String;
@@ -312,11 +312,9 @@ class Video extends JsonScheme {
     rawData["streamingSidecar"] = value;
   }
 
-
   /// Generated
   static Video create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "video",
     String? url,
     String? mimetype,
@@ -330,12 +328,11 @@ class Video extends JsonScheme {
     String? directpath,
     String? mediakeytimestamp,
     String? jpegthumbnail,
-      ContextInfo? contextinfo,
+    ContextInfo? contextinfo,
     String? streamingsidecar,
-})  {
+  }) {
     // Video video = Video({
-final Map video_data_create_json = {
-  
+    final Map video_data_create_json = {
       "@type": special_type,
       "url": url,
       "mimetype": mimetype,
@@ -349,14 +346,11 @@ final Map video_data_create_json = {
       "directPath": directpath,
       "mediaKeyTimestamp": mediakeytimestamp,
       "jpegThumbnail": jpegthumbnail,
-      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
+      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
       "streamingSidecar": streamingsidecar,
+    };
 
-
-};
-
-
-          video_data_create_json.removeWhere((key, value) => value == null);
+    video_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -365,8 +359,6 @@ final Map video_data_create_json = {
         }
       });
     }
-return Video(video_data_create_json);
-
-
-      }
+    return Video(video_data_create_json);
+  }
 }

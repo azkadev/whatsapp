@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class ForwardFromChat extends JsonScheme {
-
   /// Generated
   ForwardFromChat(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"forward_from_chat","id":"","type":""};
+    return {"@type": "forward_from_chat", "id": "", "type": ""};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == forward_from_chat
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class ForwardFromChat extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [ForwardFromChat]
-  /// Empty  
+  /// Empty
   static ForwardFromChat empty() {
     return ForwardFromChat({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class ForwardFromChat extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get id {
     try {
-      if (rawData["id"] is String == false){
+      if (rawData["id"] is String == false) {
         return null;
       }
       return rawData["id"] as String;
@@ -75,11 +68,10 @@ class ForwardFromChat extends JsonScheme {
     rawData["id"] = value;
   }
 
-
   /// Generated
   String? get type {
     try {
-      if (rawData["type"] is String == false){
+      if (rawData["type"] is String == false) {
         return null;
       }
       return rawData["type"] as String;
@@ -93,27 +85,21 @@ class ForwardFromChat extends JsonScheme {
     rawData["type"] = value;
   }
 
-
   /// Generated
   static ForwardFromChat create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "forward_from_chat",
     String? id,
     String? type,
-})  {
+  }) {
     // ForwardFromChat forwardFromChat = ForwardFromChat({
-final Map forwardFromChat_data_create_json = {
-  
+    final Map forwardFromChat_data_create_json = {
       "@type": special_type,
       "id": id,
       "type": type,
+    };
 
-
-};
-
-
-          forwardFromChat_data_create_json.removeWhere((key, value) => value == null);
+    forwardFromChat_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -122,8 +108,6 @@ final Map forwardFromChat_data_create_json = {
         }
       });
     }
-return ForwardFromChat(forwardFromChat_data_create_json);
-
-
-      }
+    return ForwardFromChat(forwardFromChat_data_create_json);
+  }
 }

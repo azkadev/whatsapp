@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class PollOption extends JsonScheme {
-
   /// Generated
   PollOption(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"poll_option","optionName":"J"};
+    return {"@type": "poll_option", "optionName": "J"};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == poll_option
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class PollOption extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [PollOption]
-  /// Empty  
+  /// Empty
   static PollOption empty() {
     return PollOption({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class PollOption extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get optionname {
     try {
-      if (rawData["optionName"] is String == false){
+      if (rawData["optionName"] is String == false) {
         return null;
       }
       return rawData["optionName"] as String;
@@ -75,25 +68,19 @@ class PollOption extends JsonScheme {
     rawData["optionName"] = value;
   }
 
-
   /// Generated
   static PollOption create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "poll_option",
     String? optionname,
-})  {
+  }) {
     // PollOption pollOption = PollOption({
-final Map pollOption_data_create_json = {
-  
+    final Map pollOption_data_create_json = {
       "@type": special_type,
       "optionName": optionname,
+    };
 
-
-};
-
-
-          pollOption_data_create_json.removeWhere((key, value) => value == null);
+    pollOption_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -102,8 +89,6 @@ final Map pollOption_data_create_json = {
         }
       });
     }
-return PollOption(pollOption_data_create_json);
-
-
-      }
+    return PollOption(pollOption_data_create_json);
+  }
 }

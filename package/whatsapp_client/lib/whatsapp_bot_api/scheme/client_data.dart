@@ -2,21 +2,19 @@
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
-
-/// Generated 
+/// Generated
 class ClientData extends JsonScheme {
-
   /// Generated
   ClientData(super.rawData);
-  
+
   /// return default data
-  /// 
+  ///
   static Map get defaultData {
-    return {"@type":"clientData","id":"","name":""};
+    return {"@type": "clientData", "id": "", "name": ""};
   }
 
-  /// check data 
-  /// if raw data 
+  /// check data
+  /// if raw data
   /// - rawData["@type"] == clientData
   /// if same return true
   bool json_scheme_utils_checkDataIsSameBySpecialType() {
@@ -30,20 +28,16 @@ class ClientData extends JsonScheme {
     return onResult(rawData["@type"], defaultData["@type"]);
   }
 
-  
-
   /// create [ClientData]
-  /// Empty  
+  /// Empty
   static ClientData empty() {
     return ClientData({});
   }
 
-  
-
   /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false){
+      if (rawData["@type"] is String == false) {
         return null;
       }
       return rawData["@type"] as String;
@@ -57,11 +51,10 @@ class ClientData extends JsonScheme {
     rawData["@type"] = value;
   }
 
-
   /// Generated
   String? get id {
     try {
-      if (rawData["id"] is String == false){
+      if (rawData["id"] is String == false) {
         return null;
       }
       return rawData["id"] as String;
@@ -75,11 +68,10 @@ class ClientData extends JsonScheme {
     rawData["id"] = value;
   }
 
-
   /// Generated
   String? get name {
     try {
-      if (rawData["name"] is String == false){
+      if (rawData["name"] is String == false) {
         return null;
       }
       return rawData["name"] as String;
@@ -93,27 +85,21 @@ class ClientData extends JsonScheme {
     rawData["name"] = value;
   }
 
-
   /// Generated
   static ClientData create({
-              bool schemeUtilsIsSetDefaultData = false,
-
+    bool schemeUtilsIsSetDefaultData = false,
     String special_type = "clientData",
     String? id,
     String? name,
-})  {
+  }) {
     // ClientData clientData = ClientData({
-final Map clientData_data_create_json = {
-  
+    final Map clientData_data_create_json = {
       "@type": special_type,
       "id": id,
       "name": name,
+    };
 
-
-};
-
-
-          clientData_data_create_json.removeWhere((key, value) => value == null);
+    clientData_data_create_json.removeWhere((key, value) => value == null);
 
     if (schemeUtilsIsSetDefaultData) {
       defaultData.forEach((key, value) {
@@ -122,8 +108,6 @@ final Map clientData_data_create_json = {
         }
       });
     }
-return ClientData(clientData_data_create_json);
-
-
-      }
+    return ClientData(clientData_data_create_json);
+  }
 }

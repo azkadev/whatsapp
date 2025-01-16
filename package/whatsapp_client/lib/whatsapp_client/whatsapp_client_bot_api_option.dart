@@ -36,23 +36,31 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 import 'package:general_lib/general_lib.dart';
 import 'package:server_universe/native/native.dart';
-/// 
+
+///
 class WhatsAppClientBotApiOption {
-  /// 
+  ///
   final ServerUniverseNative? serverUniverseNative;
-  /// 
+
+  ///
   final String tokenBot;
-  /// 
+
+  ///
   final Map<dynamic, dynamic>? clientOption;
-  /// 
+
+  ///
   final Crypto? crypto;
-  /// 
+
+  ///
   final Uri? whatsAppUrlWebhook;
-  /// 
+
+  ///
   final Uri? urlWaBotApi;
-  /// 
+
+  ///
   final bool? isInvokeThrowOnError;
-  /// 
+
+  ///
   const WhatsAppClientBotApiOption({
     required this.serverUniverseNative,
     required this.tokenBot,
