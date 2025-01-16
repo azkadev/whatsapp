@@ -1,3 +1,8 @@
+## 1.0.34
+
+- New Version 1.0.34
+- Add Support Wasm
+- Update Dependencies
 ## 1.0.33
 
 - New Version 1.0.33

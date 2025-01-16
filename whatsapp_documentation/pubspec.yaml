@@ -12,8 +12,8 @@ dependencies:
     sdk: 'flutter'
   cupertino_icons: '^1.0.6'
   path: '^1.9.0'
-  general_lib: '^0.0.61'
-  general_lib_flutter: '^0.0.40'
+  general_lib: '^0.0.62'
+  general_lib_flutter: '^0.0.41'
   documentation: '^0.0.2'
 dev_dependencies:
   flutter_test:
