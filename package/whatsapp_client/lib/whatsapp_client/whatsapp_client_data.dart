@@ -34,19 +34,26 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: constant_identifier_names, non_constant_identifier_names
 
+/// 
 enum WhatsAppClientType {
+  /// 
   whats_app_bot_api,
+  /// 
   walib,
 }
-
+/// 
 class WhatsAppClientData {
+  /// 
   final String whats_app_token_bot;
+  /// 
   final WhatsAppClientType whatsAppClientType;
+  /// 
   const WhatsAppClientData({
     required this.whats_app_token_bot,
     required this.whatsAppClientType,
   });
 
+  /// 
   static whatsAppBotApi({
     required String token_bot,
   }) {

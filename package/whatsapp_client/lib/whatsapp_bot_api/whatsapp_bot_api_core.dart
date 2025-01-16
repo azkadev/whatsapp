@@ -46,22 +46,39 @@ import 'package:server_universe/native/native.dart';
 import 'package:whatsapp_client/scheme/scheme.dart';
 import 'package:whatsapp_client/whatsapp_bot_api/whatsapp_bot_api_update.dart';
 
+///
 class WhatsAppBotApi {
+ ///
   bool is_invoke_throw_on_error = true;
 
+  ///
   late String token_bot;
+  ///
   ServerUniverseNative? serverUniverseNative;
+  ///
   bool is_init_server = false;
+  ///
   Uri whatsapp_url_webhook = Uri.parse("http://0.0.0.0:8080/wa/webhook");
+  ///
   Crypto whats_app_crypto;
+  ///
   Client http_client = Client();
 
+
+///
   EventEmitter event_emitter = EventEmitter();
+  ///
   List state_data = [];
+
+///
   String event_invoke = "invoke";
+  ///
   String event_update = "update";
+///
   Uri url_wa_bot_api = Uri.parse("http://0.0.0.0:9990/api");
 
+
+///
   WhatsAppBotApi({
     required String tokenBot,
     Map? clientOption,
@@ -97,6 +114,7 @@ class WhatsAppBotApi {
     }
   }
 
+///
   void initServer() {
     if (serverUniverseNative != null) {
       if (Dart.isWeb == false) {
@@ -134,6 +152,7 @@ class WhatsAppBotApi {
       }
     }
   }
+  ///
 
   WaClientData waClientData({
     required Map query,
@@ -155,6 +174,8 @@ class WhatsAppBotApi {
       return WaClientData(decyprt);
     }
   }
+
+  ////
 
   Future<Map> initIsolate({
     String? tokenBot,
@@ -208,6 +229,7 @@ class WhatsAppBotApi {
     return new_scheme;
   }
 
+///
   Future<Map> initIsolateNewClient({
     required String tokenBot,
     String? idClient,
@@ -235,7 +257,7 @@ class WhatsAppBotApi {
       pathSegments: pathSegments,
     );
   }
-
+///
   EventEmitterListener on(String type_update,
       FutureOr<dynamic> Function(UpdateWaBot updateWaBot) callback) {
     return event_emitter.on(
@@ -251,11 +273,11 @@ class WhatsAppBotApi {
       },
     );
   }
-
+///
   void emit(String type_update, UpdateWaBot updateWaBot) {
     return event_emitter.emit(eventName: type_update, value: updateWaBot);
   }
-
+///
   Future<Map> invokeRaw({
     required Map parameters,
     required String? tokenBot,
@@ -294,6 +316,7 @@ class WhatsAppBotApi {
     return result;
   }
 
+////
   Future<Map> invoke({
     required Map parameters,
     String? tokenBot,
@@ -309,7 +332,7 @@ class WhatsAppBotApi {
       httpClient: httpClient,
     );
   }
-
+///
   Future<Map> request({
     required Map parameters,
     String? tokenBot,

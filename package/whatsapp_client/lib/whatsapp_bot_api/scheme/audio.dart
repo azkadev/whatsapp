@@ -1,72 +1,50 @@
-/* <!-- START LICENSE -->
-
-
-This Software / Program / Source Code Created By Developer From Company GLOBAL CORPORATION
-Social Media:
-
-   - Youtube: https://youtube.com/@Global_Corporation 
-   - Github: https://github.com/globalcorporation
-   - TELEGRAM: https://t.me/GLOBAL_CORP_ORG_BOT
-
-All code script in here created 100% original without copy / steal from other code if we copy we add description source at from top code
-
-If you wan't edit you must add credit me (don't change)
-
-If this Software / Program / Source Code has you
-
-Jika Program ini milik anda dari hasil beli jasa developer di (Global Corporation / apapun itu dari turunan itu jika ada kesalahan / bug / ingin update segera lapor ke sub)
-
-Misal anda beli Beli source code di Slebew CORPORATION anda lapor dahulu di slebew jangan lapor di GLOBAL CORPORATION!
-
-Jika ada kendala program ini (Pastikan sebelum deal project tidak ada negosiasi harga)
-Karena jika ada negosiasi harga kemungkinan
-
-1. Software Ada yang di kurangin
-2. Informasi tidak lengkap
-3. Bantuan Tidak Bisa remote / full time (Ada jeda)
-
-Sebelum program ini sampai ke pembeli developer kami sudah melakukan testing
-
-jadi sebelum nego kami sudah melakukan berbagai konsekuensi jika nego tidak sesuai ? 
-Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba tiba di potong akhirnya bantuan / software kadang tidak lengkap
-
-
-<!-- END LICENSE --> */
 // ignore_for_file: non_constant_identifier_names, unused_import
 import "package:general_lib/general_lib.dart";
 // import "dart:convert";
 
 import "context_info.dart";
 
+/// Generated 
 class Audio extends JsonScheme {
-  Audio(super.rawData);
 
+  /// Generated
+  Audio(super.rawData);
+  
+  /// return default data
+  /// 
   static Map get defaultData {
-    return {
-      "@type": "audio",
-      "url": "",
-      "mimetype": "audio/mpeg",
-      "fileSha256": "",
-      "fileLength": "388702",
-      "seconds": 12,
-      "ptt": false,
-      "mediaKey": "+n5o=",
-      "fileEncSha256": "CvG4V/+=",
-      "directPath": "/v/t62.7114-24/.enc?ccb=11-4&oh=-uQ&oe=64A9B93D",
-      "mediaKeyTimestamp": "1686254281",
-      "contextInfo": {
-        "@type": "contextInfo",
-        "expiration": 604800,
-        "ephemeralSettingTimestamp": "1675329",
-        "disappearingMode": {"initiator": "INITIATED_BY_ME"}
-      },
-      "waveform": "=="
-    };
+    return {"@type":"audio","url":"","mimetype":"audio/mpeg","fileSha256":"","fileLength":"388702","seconds":12,"ptt":false,"mediaKey":"+n5o=","fileEncSha256":"CvG4V/+=","directPath":"/v/t62.7114-24/.enc?ccb=11-4&oh=-uQ&oe=64A9B93D","mediaKeyTimestamp":"1686254281","contextInfo":{"@type":"contextInfo","expiration":604800,"ephemeralSettingTimestamp":"1675329","disappearingMode":{"initiator":"INITIATED_BY_ME"}},"waveform":"=="};
   }
 
+  /// check data 
+  /// if raw data 
+  /// - rawData["@type"] == audio
+  /// if same return true
+  bool json_scheme_utils_checkDataIsSameBySpecialType() {
+    return rawData["@type"] == defaultData["@type"];
+  }
+
+  /// check value data whatever do yout want
+  bool json_scheme_utils_checkDataIsSameBuilder({
+    required bool Function(Map rawData, Map defaultData) onResult,
+  }) {
+    return onResult(rawData["@type"], defaultData["@type"]);
+  }
+
+  
+
+  /// create [Audio]
+  /// Empty  
+  static Audio empty() {
+    return Audio({});
+  }
+
+  
+
+  /// Generated
   String? get special_type {
     try {
-      if (rawData["@type"] is String == false) {
+      if (rawData["@type"] is String == false){
         return null;
       }
       return rawData["@type"] as String;
@@ -75,13 +53,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set special_type(String? value) {
     rawData["@type"] = value;
   }
 
+
+  /// Generated
   String? get url {
     try {
-      if (rawData["url"] is String == false) {
+      if (rawData["url"] is String == false){
         return null;
       }
       return rawData["url"] as String;
@@ -90,13 +71,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set url(String? value) {
     rawData["url"] = value;
   }
 
+
+  /// Generated
   String? get mimetype {
     try {
-      if (rawData["mimetype"] is String == false) {
+      if (rawData["mimetype"] is String == false){
         return null;
       }
       return rawData["mimetype"] as String;
@@ -105,13 +89,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set mimetype(String? value) {
     rawData["mimetype"] = value;
   }
 
+
+  /// Generated
   String? get filesha256 {
     try {
-      if (rawData["fileSha256"] is String == false) {
+      if (rawData["fileSha256"] is String == false){
         return null;
       }
       return rawData["fileSha256"] as String;
@@ -120,13 +107,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set filesha256(String? value) {
     rawData["fileSha256"] = value;
   }
 
+
+  /// Generated
   String? get filelength {
     try {
-      if (rawData["fileLength"] is String == false) {
+      if (rawData["fileLength"] is String == false){
         return null;
       }
       return rawData["fileLength"] as String;
@@ -135,13 +125,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set filelength(String? value) {
     rawData["fileLength"] = value;
   }
 
+
+  /// Generated
   num? get seconds {
     try {
-      if (rawData["seconds"] is num == false) {
+      if (rawData["seconds"] is num == false){
         return null;
       }
       return rawData["seconds"] as num;
@@ -150,13 +143,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set seconds(num? value) {
     rawData["seconds"] = value;
   }
 
+
+  /// Generated
   bool? get ptt {
     try {
-      if (rawData["ptt"] is bool == false) {
+      if (rawData["ptt"] is bool == false){
         return null;
       }
       return rawData["ptt"] as bool;
@@ -165,13 +161,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set ptt(bool? value) {
     rawData["ptt"] = value;
   }
 
+
+  /// Generated
   String? get mediakey {
     try {
-      if (rawData["mediaKey"] is String == false) {
+      if (rawData["mediaKey"] is String == false){
         return null;
       }
       return rawData["mediaKey"] as String;
@@ -180,13 +179,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set mediakey(String? value) {
     rawData["mediaKey"] = value;
   }
 
+
+  /// Generated
   String? get fileencsha256 {
     try {
-      if (rawData["fileEncSha256"] is String == false) {
+      if (rawData["fileEncSha256"] is String == false){
         return null;
       }
       return rawData["fileEncSha256"] as String;
@@ -195,13 +197,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set fileencsha256(String? value) {
     rawData["fileEncSha256"] = value;
   }
 
+
+  /// Generated
   String? get directpath {
     try {
-      if (rawData["directPath"] is String == false) {
+      if (rawData["directPath"] is String == false){
         return null;
       }
       return rawData["directPath"] as String;
@@ -210,13 +215,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set directpath(String? value) {
     rawData["directPath"] = value;
   }
 
+
+  /// Generated
   String? get mediakeytimestamp {
     try {
-      if (rawData["mediaKeyTimestamp"] is String == false) {
+      if (rawData["mediaKeyTimestamp"] is String == false){
         return null;
       }
       return rawData["mediaKeyTimestamp"] as String;
@@ -225,28 +233,36 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set mediakeytimestamp(String? value) {
     rawData["mediaKeyTimestamp"] = value;
   }
 
+
+  /// Generated
   ContextInfo get contextinfo {
     try {
-      if (rawData["contextInfo"] is Map == false) {
-        return ContextInfo({});
+      if (rawData["contextInfo"] is Map == false){
+        return ContextInfo({}); 
       }
       return ContextInfo(rawData["contextInfo"] as Map);
-    } catch (e) {
-      return ContextInfo({});
+    } catch (e) {  
+      return ContextInfo({}); 
     }
   }
 
+
+  /// Generated
   set contextinfo(ContextInfo value) {
     rawData["contextInfo"] = value.toJson();
   }
 
+
+
+  /// Generated
   String? get waveform {
     try {
-      if (rawData["waveform"] is String == false) {
+      if (rawData["waveform"] is String == false){
         return null;
       }
       return rawData["waveform"] as String;
@@ -255,11 +271,16 @@ class Audio extends JsonScheme {
     }
   }
 
+  /// Generated
   set waveform(String? value) {
     rawData["waveform"] = value;
   }
 
+
+  /// Generated
   static Audio create({
+              bool schemeUtilsIsSetDefaultData = false,
+
     String special_type = "audio",
     String? url,
     String? mimetype,
@@ -271,11 +292,12 @@ class Audio extends JsonScheme {
     String? fileencsha256,
     String? directpath,
     String? mediakeytimestamp,
-    ContextInfo? contextinfo,
+      ContextInfo? contextinfo,
     String? waveform,
-  }) {
+})  {
     // Audio audio = Audio({
-    Map audio_data_create_json = {
+final Map audio_data_create_json = {
+  
       "@type": special_type,
       "url": url,
       "mimetype": mimetype,
@@ -287,13 +309,24 @@ class Audio extends JsonScheme {
       "fileEncSha256": fileencsha256,
       "directPath": directpath,
       "mediaKeyTimestamp": mediakeytimestamp,
-      "contextInfo": (contextinfo != null) ? contextinfo.toJson() : null,
+      "contextInfo": (contextinfo != null)?contextinfo.toJson(): null,
       "waveform": waveform,
-    };
 
-    audio_data_create_json.removeWhere((key, value) => value == null);
-    Audio audio_data_create = Audio(audio_data_create_json);
 
-    return audio_data_create;
-  }
+};
+
+
+          audio_data_create_json.removeWhere((key, value) => value == null);
+
+    if (schemeUtilsIsSetDefaultData) {
+      defaultData.forEach((key, value) {
+        if (audio_data_create_json.containsKey(key) == false) {
+          audio_data_create_json[key] = value;
+        }
+      });
+    }
+return Audio(audio_data_create_json);
+
+
+      }
 }

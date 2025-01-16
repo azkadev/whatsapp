@@ -44,13 +44,21 @@ import 'package:whatsapp_client/whatsapp_bot_api/whatsapp_bot_api.dart';
 import 'package:whatsapp_client/whatsapp_client/update_whatsapp_client.dart';
 import 'package:whatsapp_client/whatsapp_client/whatsapp_client_bot_api_option.dart';
 import 'package:whatsapp_client/whatsapp_client/whatsapp_client_data.dart';
-
+/// 
 class WhatsAppClient {
+/// 
   late final WhatsAppBotApi whatsAppBotApi;
+/// 
   EventEmitter event_emitter = EventEmitter();
+/// 
   final String event_update;
+/// 
   final String event_invoke;
+/// 
   final Directory? directory_temp;
+/// 
+
+
   late Client http_client;
 
   /// return original data json
@@ -69,7 +77,7 @@ class WhatsAppClient {
     } else {
       http_client = Client();
     }
-  }
+  }/// 
   void ensureInitialized({
     bool is_init_walib = true,
     bool is_init_whatsapp_bot_api = true,
@@ -95,7 +103,7 @@ class WhatsAppClient {
       );
       whatsAppBotApi.initServer();
     }
-  }
+  }/// 
 
   Future<void> autoSetData(UpdateWhatsAppClient updateWhatsAppClient) async {}
 

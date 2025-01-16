@@ -41,15 +41,18 @@ import 'package:io_universe/io_universe.dart';
 
 import 'wa_bot_api_script.dart';
 import "package:path/path.dart" as path;
-
+/// 
 enum WhasAppBotApiScriptLanguageCodeType {
+  /// 
   js,
+  /// 
   dart,
 }
-
+/// 
 class WhatsAppBotApiServer {
+  /// 
   const WhatsAppBotApiServer();
-
+/// 
   Future<void> installBotApiScript({
     required Directory directory_target,
     bool force_install_script = true,
@@ -61,7 +64,7 @@ class WhatsAppBotApiServer {
       force_install_script: force_install_script,
       whasAppBotApiScriptLanguageCodeType: whasAppBotApiScriptLanguageCodeType,
     );
-  }
+  }/// 
 
   Future<Process> runWaBotApi({
     required String host,
@@ -87,7 +90,7 @@ class WhatsAppBotApiServer {
       whasAppBotApiScriptLanguageCodeType: whasAppBotApiScriptLanguageCodeType,
     );
   }
-
+/// 
   Future<void> installBotApiScriptJs({
     required Directory directory_target,
     bool force_install_script = true,
@@ -166,9 +169,9 @@ class WhatsAppBotApiServer {
       await npm_procces.exitCode;
     }
   }
-
+/// 
   static int pid_wa_bot_server = 0;
-
+/// 
   Future<Process> runWaBotApiJs({
     required String host,
     required int wa_bot_api_port,
