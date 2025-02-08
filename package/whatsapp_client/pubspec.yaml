@@ -29,13 +29,13 @@ dev_dependencies:
   lints: '^5.0.0'
   test: 'any'
 dependencies:
-  general_lib: '^0.0.62'
+  general_lib: '^0.0.63'
   packagex: '^0.0.85'
   http: '^1.2.2'
   io_universe: '^0.0.5'
   path: '^1.9.0'
   mime: '^2.0.0'
-  server_universe: '^0.0.35'
+  server_universe: '^0.0.36'
 dependency_overrides:
   pointycastle: '3.8.0'
   mime: '^2.0.0'
