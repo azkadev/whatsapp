@@ -22,6 +22,8 @@ dev_dependencies:
   test: 'any'
 publish_to: 'none'
 dependency_overrides:
-  pointycastle: '3.8.0'
+  pointycastle: '4.0.0'
   mime: '^2.0.0'
 dependencies: {}
+project:
+  type: ''

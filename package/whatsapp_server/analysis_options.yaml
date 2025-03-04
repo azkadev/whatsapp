@@ -7,3 +7,5 @@ analyzer:
 linter:
   rules:
     - public_member_api_docs
+formatter:
+  page_width: 9999999999
