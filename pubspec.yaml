@@ -4,7 +4,7 @@ version: '1.0.23'
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
-  general_lib: '^0.0.69'
+  general_lib: '^0.0.70'
   mason_logger: '^0.3.1'
   path: '^1.9.0'
   universal_io: '^2.2.2'
